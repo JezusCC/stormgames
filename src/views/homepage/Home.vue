@@ -3,8 +3,8 @@
 		<!-- 顶部导航栏 -->
 		<div>
 			<ul>
-				<li>主页</li>
-				<li>库</li>
+				<li><router-link to="/home">主页</router-link></li>
+				<li><router-link to="/libirary">库</router-link></li>
 				<li>个人资料</li>
 				<li>游戏新闻</li>
 			</ul>
