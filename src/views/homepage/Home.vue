@@ -24,13 +24,13 @@
 			<!-- 上部轮播图-->
 			<div></div>
 			<!-- 卡片容器，容器内可盛放4张卡片：近期最热 -->
-			<cardbox :items="getItems('hot')"></cardbox>
+			<cardbox :items="getItems('hot')" name="近期热门"></cardbox>
 			<!-- 卡片容器，容器内可盛放4张卡片：商城上新 -->
-			<cardbox :items="getItems('new')"></cardbox>
+			<cardbox :items="getItems('new')" name="商城上新"></cardbox>
 			<!-- 卡片容器，容器内可盛放4张卡片：特惠商品 -->
-			<cardbox :items="getItems('count')"></cardbox>
+			<cardbox :items="getItems('count')" name="特惠商品"></cardbox>
 			<!-- 卡片容器，容器内可盛放4张卡片：免费商品 -->
-			<cardbox :items="getItems('free')"></cardbox>
+			<cardbox :items="getItems('free')" name="免费商品"></cardbox>
 		
 		</div>
 	</div>
