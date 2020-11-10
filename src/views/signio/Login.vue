@@ -1,47 +1,31 @@
 <template>
-  <div>
+  <div class="loginbox">
     <!-- loginbox -->
-    <div>
+    <div class="login-left">
       <!-- login-Left -->
       <h2>登录</h2>
       <form action="#">
-        <table>
-          <tr>
-            <td><span>Storm账号名</span></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="text"
-                placeholder="账号"
-                name="username"
-                v-model="loginname"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td><span>Storm通行密码</span></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="password"
-                placeholder="密码"
-                name="password"
-                v-model="loginpassword"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button @click="loginBtn()">登录</button>
-              <a href="">忘记您的密码？</a>
-            </td>
-          </tr>
-        </table>
+        <span>Storm账号名</span>
+        <input
+          type="text"
+          placeholder="输入您的账号"
+          name="username"
+          v-model="loginname"
+        />
+        <span>Storm通行密码</span>
+        <input
+          type="password"
+          placeholder="输入您的密码"
+          name="password"
+          v-model="loginpassword"
+        />
+        <div class="login-option">
+          <button @click="loginBtn()">登录</button>
+          <a href="">忘记密码？</a>
+        </div>
       </form>
     </div>
-    <div>
+    <div class="login-right">
       <!-- news-Right and register -->
       <a @click.prevent="jumpToRegister()">加入Storm</a>
     </div>
@@ -73,5 +57,5 @@ export default {
 </script>
 
 <style scoped>
-/* @import url("../../assets/css/signio/login.css"); */
+@import url("../../assets/css/signio/login.css");
 </style>
