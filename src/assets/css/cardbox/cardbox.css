@@ -1,0 +1,33 @@
+.cardbox{
+	background-color: aqua;
+	height: 13rem;
+	margin: 1rem 0;
+}
+.cardhead{
+	color: azure;
+	font-size: 1rem;
+	height: 1.75rem;
+	position: relative;
+	margin-bottom: 0.25rem;
+}
+.cardhead button{
+	position: absolute;
+	right: 1rem;
+}
+.cardbox ul{
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+.cardbox ul li{
+	margin: 0 3px;
+	padding: 0;
+	width: 25%;
+	height: 10rem;
+	background-color: #F0FFFF;
+	flex: 1;
+}
+.cardbox ul li:hover{
+	background-color: black;
+}

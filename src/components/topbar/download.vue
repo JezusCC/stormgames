@@ -22,6 +22,19 @@
 				<li>Storm for Mac Fullstack Beta</li>
 			</ul>
 		</div>
+		<div>
+			<h3>下载基于Mobile平台的Storm客户端</h3>
+			<ul>
+				<li>Storm for Andriod</li>
+				<li>Storm for Apple</li>
+			</ul>
+		</div>
+		<div>
+			<h3>下载基于Storm云平台的客户端</h3>
+			<ul>
+				<li>Storm for Storm Cloud</li>
+			</ul>
+		</div>
 	</div>
 </template>
 

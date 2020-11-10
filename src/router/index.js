@@ -29,8 +29,12 @@ const routes = [
 		component:() => import('../views/signio/Login.vue')
 	},
 	{
-		path:'register',
+		path:'/register',
 		component:() => import('../views/signio/Register.vue')
+	},
+	{
+			path:'/download',
+			component:() => import('../components/topbar/download.vue')
 	}
 ]
 
