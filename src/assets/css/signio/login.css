@@ -15,11 +15,11 @@
   margin-bottom: 1rem;
 }
 .login-left span{
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #fcfcfc;
   display: inline-block;
   margin-bottom: 0.5rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   width: 100%;
   padding-top: 10px;
 }
@@ -28,7 +28,7 @@
   width: 60%;
   padding: 0 5%;
   margin-bottom: 0.25rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
   display: inline-block;
   border: none;
   border-bottom: #FCFCFC solid 0.125rem;
@@ -43,9 +43,8 @@
   flex: 1;
   border: none;
   border-radius: 0.25rem;
-  width: 45%;
   height: 1.5rem;
-  margin: 1rem 1rem 0rem 1rem;
+  margin: 1rem 1rem 0rem 2rem;
   background-color:#0078f2;
 }
 .login-option a{

@@ -1,44 +1,25 @@
 <template>
-  <div>
+  <div class="registerbox">
     <!-- register box -->
-    <div>
+    <div class="register-left">
       <h2>创建您的账户</h2>
       <form action="#">
-        <table>
-          <tr>
-            <td><span>登录用户名</span></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="用户名" name="username" /></td>
-          </tr>
-          <tr>
-            <td><span>电子邮箱地址</span></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="邮箱" name="useremail" /></td>
-          </tr>
-          <tr>
-            <td><span>账户密码</span></td>
-          </tr>
-          <tr>
-            <td><input type="password" placeholder="密码" name="upwd" /></td>
-          </tr>
-          <tr>
-            <td><span>确认您的账户密码</span></td>
-          </tr>
-          <tr>
-            <td>
-              <input type="password" placeholder="确认密码" name="upwd" />
-            </td>
-          </tr>
-          <tr>
-            <td><button @click="registerBtn()">注册</button></td>
-          </tr>
-          <tr>
-            <td><a @click.prevent="backToRegister()">已有账号？返回登录</a></td>
-          </tr>
-        </table>
+        <span>登录用户名</span>
+        <input type="text" placeholder="登录用户名" name="username" />
+        <span>电子邮箱地址</span>
+        <input type="text" placeholder="邮箱" name="useremail" />
+        <span>账户密码</span>
+        <input type="password" placeholder="账户密码" name="upwd" />
+        <span>确认您的账户密码</span>
+        <input type="password" placeholder="确认您的账户密码" name="upwd" />
+        <div class="register-option">
+          <button @click="registerBtn()">注册</button>
+          <a href="">了解更多</a>
+        </div>
       </form>
+    </div>
+    <div class="register-right">
+      <a @click.prevent="backToRegister()">已有账号？返回登录</a>
     </div>
   </div>
 </template>
@@ -60,4 +41,5 @@ export default {
 </script>
 
 <style scoped>
+@import url("../../assets/css/signio/register.css");
 </style>
