@@ -1,12 +1,12 @@
 <template>
 	<!-- 使用浮动布局，可容纳四个卡片，包含一个更多标签 -->
 	<div>
+		<div><span>{{name}}</span><button>浏览更多</button></div>
 		<ul>
 			<li v-for="(item,index) in items" @click="jumpUrl(index,$event)">
 				<img :src="item.imgurl" alt="">
 			</li>
 		</ul>
-		<button>浏览更多</button>
 	</div>
 </template>
 
@@ -16,6 +16,9 @@
 		props:{
 			items:{
 				required:true
+			},
+			name:{
+				default:'未命名卡片'
 			}
 		},
 		methods:{
@@ -26,5 +29,6 @@
 	}
 </script>
 
-<style>
+<style scoped="scoped">
+	
 </style>

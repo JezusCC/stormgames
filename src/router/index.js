@@ -23,6 +23,14 @@ const routes = [
 	{
 	  path: '/news',
 	  component: () => import('../views/homepage/News.vue')
+	},
+	{
+		path:'/login',
+		component:() => import('../views/signio/Login.vue')
+	},
+	{
+		path:'register',
+		component:() => import('../views/signio/Register.vue')
 	}
 ]
 

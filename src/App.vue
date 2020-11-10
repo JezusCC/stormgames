@@ -3,10 +3,10 @@
     <topbar>
 			<ul slot="navlist">
 				<li><img src="" alt="#logo"></li>
-				<li><router-link to="/home">首页</router-link></li>
+				<li><router-link to="/home">主页</router-link></li>
 				<li><router-link to="/community">玩家社区</router-link></li>
 				<li><router-link to="/developer">开发者社区</router-link></li>
-				<li><router-link to="/shopserve">客服</router-link></li>
+				<li><router-link to="/shopserver">客服</router-link></li>
 			</ul>
 		</topbar>
 		<router-view></router-view>
