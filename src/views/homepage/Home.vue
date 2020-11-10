@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="contain">
 		<!-- 顶部导航栏 -->
-		<div>
+		<div class="nav">
 			<ul>
 				<li><router-link to="/home">主页</router-link></li>
 				<li><router-link to="/libirary">库</router-link></li>
@@ -10,12 +10,12 @@
 			</ul>
 		</div>
 		<!-- 左侧固定标签 -->
-		<div>
-			<h4>分类列表</h4>
+		<div class="categorylist">
+			<h4>筛选您想要的</h4>
 			<div v-for="list in categoryList">
 				<h5>{{list.title}}</h5>
 				<ul>
-					<li v-for="item in list.item">{{item}}</li>
+					<li v-for="item in list.item" @click="jumpToSearch()">{{item}}</li>
 				</ul>
 			</div>
 		</div>
@@ -86,10 +86,14 @@
 						{imgurl:'aaa',jmpurl:'#'}
 					]
 				}
+			},
+			jumpToSearch(){
+				this.$router.push('/search_product')
 			}
 		}
 	}
 </script>
 
 <style>
+	@import url("../../assets/css/homepage/home.css");
 </style>
