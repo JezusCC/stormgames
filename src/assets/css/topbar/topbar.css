@@ -60,3 +60,6 @@ button{
 	width: 8rem;
 	height: 100%;
 }
+.downloadBtn:hover{
+	cursor: pointer;
+}

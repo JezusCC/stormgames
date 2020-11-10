@@ -1,0 +1,41 @@
+.contain{
+	width: 75%;
+	margin: 0 auto;
+	position: relative;
+}
+.nav{
+	width: 50%;
+	height: 2rem;
+	margin: 2rem auto;
+}
+.nav ul{
+	display: flex;
+}
+.nav ul li{
+	flex: 1;
+	text-align: center;
+}
+.categorylist{
+	color: #FFFFFF;
+	width: 15%;
+	position: absolute;
+	left: -16%;
+}
+.categorylist h4{
+	font-size: 1.5rem;
+	border-bottom: #FCFCFC solid 0.25rem;
+}
+.categorylist h5{
+	font-size: 1.125rem;
+	margin: 0.125rem auto;
+}
+.categorylist ul li{
+	color: #0078F2;
+	margin: 0.2rem;
+	padding: 0.05rem;
+}
+.categorylist ul li:hover{
+	background-color: #0078F2;
+	color: #FCFCFC;
+	cursor: pointer;
+}
