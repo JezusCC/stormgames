@@ -73,5 +73,5 @@ export default {
 </script>
 
 <style scoped>
-@import url("../../assets/css/signio/login.css");
+/* @import url("../../assets/css/signio/login.css"); */
 </style>
