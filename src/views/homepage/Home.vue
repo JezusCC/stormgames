@@ -5,8 +5,8 @@
 			<ul>
 				<li><router-link to="/home">主页</router-link></li>
 				<li><router-link to="/libirary">库</router-link></li>
-				<li>个人资料</li>
-				<li>游戏新闻</li>
+				<li><router-link to="/profile">个人资料</router-link></li>
+				<li><router-link to="news">游戏新闻</router-link></li>
 			</ul>
 		</div>
 		<!-- 左侧固定标签 -->
