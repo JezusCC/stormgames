@@ -1,9 +1,9 @@
 <template>
-	<div>
+	<div class="topbarbox">
 		<slot name="navlist"></slot>
-		<div>
-			<button @click="jumpLogin()">登录</button>
-			<button @click="downloadClient()">下载客户端</button>
+		<div class="special">
+			<button class="loginBtn" @click="jumpLogin()">登录</button>
+			<button class="downloadBtn" @click="downloadClient()">下载客户端</button>
 		</div>
 	</div>
 </template>
@@ -22,4 +22,5 @@
 </script>
 
 <style>
+	@import url("../../assets/css/topbar/topbar.css");
 </style>
