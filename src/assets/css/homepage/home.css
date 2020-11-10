@@ -5,8 +5,9 @@
 }
 .nav{
 	width: 50%;
-	height: 2rem;
+	height: 4rem;
 	margin: 2rem auto;
+	background-color: #2a2a2a;
 }
 .nav ul{
 	display: flex;
@@ -14,6 +15,7 @@
 .nav ul li{
 	flex: 1;
 	text-align: center;
+	line-height: 4rem;
 }
 .categorylist{
 	color: #FFFFFF;
@@ -30,8 +32,8 @@
 	margin: 0.125rem auto;
 }
 .categorylist ul li{
-	color: #0078F2;
-	margin: 0.2rem;
+	color: #848484;
+	margin: 0.2rem 1rem 0rem;
 	padding: 0.05rem;
 }
 .categorylist ul li:hover{
