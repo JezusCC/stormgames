@@ -1,4 +1,4 @@
-<template>
+5<template>
   <div id="app">
     <topbar>
 			<ul slot="navlist">
