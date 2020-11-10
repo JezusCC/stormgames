@@ -1,7 +1,7 @@
 <template>
 	<!-- 使用浮动布局，可容纳四个卡片，包含一个更多标签 -->
-	<div>
-		<div><span>{{name}}</span><button>浏览更多</button></div>
+	<div class="cardbox">
+		<div class="cardhead"><span>{{name}}</span><button>浏览更多</button></div>
 		<ul>
 			<li v-for="(item,index) in items" @click="jumpUrl(index,$event)">
 				<img :src="item.imgurl" alt="">
@@ -30,5 +30,5 @@
 </script>
 
 <style scoped="scoped">
-	
+	@import url("../../assets/css/cardbox/cardbox.css");
 </style>
