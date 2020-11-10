@@ -3,8 +3,8 @@
 	<div class="cardbox">
 		<div class="cardhead"><span>{{name}}</span><button>浏览更多</button></div>
 		<ul>
-			<li v-for="(item,index) in items" @click="jumpUrl(index,$event)">
-				<img :src="item.imgurl" alt="">
+			<li v-for="(item,index) in items">
+				<img :src="item.imgurl"  @click="jumpUrl(index,$event)" alt="">
 			</li>
 		</ul>
 	</div>
