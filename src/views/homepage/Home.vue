@@ -22,7 +22,7 @@
 		<!-- 中部内容列表 -->
 		<div>
 			<!-- 上部轮播图-->
-			<div></div>
+			<carousel></carousel>
 			<!-- 卡片容器，容器内可盛放4张卡片：近期最热 -->
 			<cardbox :items="getItems('hot')" name="近期热门"></cardbox>
 			<!-- 卡片容器，容器内可盛放4张卡片：商城上新 -->
@@ -37,10 +37,12 @@
 </template>
 <script>
 	import cardbox from '../../components/cardbox/cardbox.vue'
+	import carousel from '../../components/carousel/carousel.vue'
 	export default {
 		name:'Home',
 		components:{
-			cardbox
+			cardbox,
+			carousel
 		},
 		data(){
 			return {
