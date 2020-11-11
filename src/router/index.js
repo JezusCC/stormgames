@@ -35,6 +35,10 @@ const routes = [
 	{
 			path:'/download',
 			component:() => import('../components/topbar/download.vue')
+	},
+	{
+		path:'/shopserver',
+		component:()=>import('../views/shopserver/Shopsever.vue')
 	}
 ]
 
