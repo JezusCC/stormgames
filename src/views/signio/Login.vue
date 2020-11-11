@@ -27,6 +27,7 @@
     </div>
     <div class="login-right">
       <!-- news-Right and register -->
+      <div class="login-right-news"></div>
       <a @click.prevent="jumpToRegister()">加入Storm</a>
     </div>
   </div>

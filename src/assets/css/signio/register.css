@@ -54,4 +54,12 @@
 }
 .register-right{
   flex: 1;
+  height: 24.5rem;
+  text-align: center;
+  /* background-color: turquoise; */
+}
+.register-right-news{
+  flex: 1;
+  height: 22rem;
+  /* background-color: violet; */
 }
