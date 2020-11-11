@@ -19,6 +19,7 @@
       </form>
     </div>
     <div class="register-right">
+      <div class="register-right-news"></div>
       <a @click.prevent="backToRegister()">已有账号？返回登录</a>
     </div>
   </div>

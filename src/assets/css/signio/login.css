@@ -54,4 +54,15 @@
 }
 .login-right{
   flex: 1;
+  /* background-color: turquoise; */
+  height: 15.05rem;
+  text-align: center;
+}
+.login-right-news{
+  height: 12.95rem;
+  /* background-color: violet; */
+}
+.login-right a{
+  flex: 1;
+  text-align: center;
 }
