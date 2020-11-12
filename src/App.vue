@@ -9,7 +9,9 @@
 				<li><router-link to="/shopserver">客服</router-link></li>
 			</ul>
 		</topbar>
-		<router-view></router-view>
+		<keep-alive>
+			<router-view></router-view>
+		</keep-alive>
   </div>
 </template>
 

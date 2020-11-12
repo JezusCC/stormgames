@@ -1,24 +1,24 @@
 <template>
-	<div>
+	<div class="libirarybox">
 		<!-- 左边库列表 -->
-		<div>
+		<div class="gategory">
 			<!-- 列表分类 -->
-			<div v-for="item in getProcessCategory()">
+			<div v-for="item in getProcessCategory()" class="gategory-list">
 				<h2>{{item.title}}</h2>
 				<ul>
-					<li v-for="game in item.games" @click="chooseGameDetail(item.index)">{{game.name}}</li>
+					<li v-for="game in item.games" @click="chooseGameDetail(game.index)">{{game.name}}</li>
 				</ul>
 			</div>
 		</div>
 		<!-- 中间内容面板 -->
-		<div>
+		<div class="gamecontain">
 			<!-- 横幅 -->
-			<div>
-				<img :src="gameDetail.imgurl" alt="">
+			<div class="detail-banner">
+				<img :src="gameDetail.imgurl" alt="商品横幅">
 			</div>
-			<div>
-				<h2>{{gamesList.length>0?gamesList[currentIndex].name:''}}</h2>
-				<div>
+			<div class="detail-header">
+				<h2>{{gamesList.length>0?gamesList[currentIndex].name:'暂无商品'}}</h2>
+				<div class="detail-header-data">
 					<span>共游玩:{{gameDetail.time}}小时</span>
 					<span>最后运行于:{{gameDetail.lastrun}}</span>
 				</div>
@@ -26,14 +26,21 @@
 				<button>模组查询</button>
 			</div>
 			<!-- 下部新闻面板 -->
-			<div>
-				<ul>
-					<li></li>
-				</ul>
+			<div class="detail-news">
+				<div v-for="item in gameUpdateNews" class="detail-news-item">
+					<!-- 圆点 -->
+					<div class="detail-news-item-circle"></div>
+					<div class="detail-news-item-card">
+						<!-- 线 inline-block -->
+						<div class="detail-news-item-line">{{item.date}}</div>
+						<!-- 新闻主体 -->
+						<div class="detail-news-item-body">{{item.info}}</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- 右侧添加内容 -->
-		<div>
+		<div class="libappend">
 			<!-- 成就列表 -->
 			<div>
 				<ul>
@@ -70,6 +77,7 @@
 		data(){
 			return {
 				//{id,name,catename,imgurl}
+				//默认值为：未分类和空列表
 				gamesList:[{title:'未分类',games:[]}],
 				togethers:[],
 				achievements:[],
@@ -120,6 +128,15 @@
 					time:256,
 					lastrun:'2020-11-11'
 				}
+			},
+			gameUpdateNews(){
+				//请求
+				return [
+					{date:'2020-11-11',info:'我是新闻体'},
+					{date:'2020-11-11',info:'我是新闻体'},
+					{date:'2020-11-11',info:'我是新闻体'},
+					{date:'2020-11-11',info:'我是新闻体'},
+				]
 			}
 		}
 	}
