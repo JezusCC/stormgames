@@ -10,12 +10,13 @@
 			</ul>
 		</div>
 		<!-- 左侧固定标签 -->
-		<div class="categorylist">
+		<div class="categorybox">
 			<h4>筛选您想要的</h4>
 			<div v-for="list in categoryList">
 				<h5>{{list.title}}</h5>
 				<ul>
 					<li v-for="item in list.item" @click="jumpToSearch()">{{item}}</li>
+					<li @click="toTop()">回到顶部</li>
 				</ul>
 			</div>
 		</div>
@@ -91,6 +92,9 @@
 			},
 			jumpToSearch(){
 				this.$router.push('/search_product')
+			},
+			toTop(){
+				window.scrollTo(0,0)
 			}
 		}
 	}
