@@ -10,6 +10,7 @@
 	flex: 8;
 	display: flex;
 	width: 40%;
+	margin-left: 15%;
 }
 .topbarbox ul li{
 	width: 6.25rem;
@@ -40,6 +41,7 @@
 	flex-direction: row-reverse;
 	right: 0;
 	height: 100%;
+	margin-right: 15%;
 }
 button{
 	color:#FFFFFF
