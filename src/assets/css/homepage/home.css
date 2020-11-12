@@ -1,7 +1,7 @@
 .contain{
-	width: 75%;
+	width: 70%;
 	margin: 0 auto;
-	position: relative;
+	/* position: relative; */
 }
 .nav{
 	width: 50%;
@@ -20,26 +20,36 @@
 .nav ul li:hover{
 	color: #0078F2;
 }
-.categorylist{
+.categorybox{
 	color: #FFFFFF;
-	width: 15%;
-	position: absolute;
-	left: -16%;
-}
-.categorylist h4{
-	font-size: 1.5rem;
+	width: 10%;
+	position: fixed;
+	left: 2.5%;
+	/* position: absolute; */
+	/* left: -16%; */
+	background-color: rgba(40,40,220,0.05);
+	border-bottom-left-radius: 0.35rem;
+	border-bottom-right-radius: 0.35rem;
 	border-bottom: #FCFCFC solid 0.25rem;
 }
-.categorylist h5{
+.categorybox h4{
+	font-size: 1.5rem;
+	border-bottom: #FCFCFC solid 0.25rem;
+	background-color: #848484;
+	text-align: center;
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+}
+.categorybox h5{
 	font-size: 1.125rem;
 	margin: 0.125rem auto;
 }
-.categorylist ul li{
+.categorybox ul li{
 	color: #848484;
 	margin: 0.2rem 1rem 0rem;
 	padding: 0.05rem;
 }
-.categorylist ul li:hover{
+.categorybox ul li:hover{
 	background-color: #0078F2;
 	color: #FCFCFC;
 	cursor: pointer;
