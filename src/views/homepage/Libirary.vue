@@ -129,6 +129,7 @@
 			},
 			chooseGameDetail(idx){
 				this.currentIndex = idx
+				window.scrollTo(0,0)
 			},
 			getFriendsOnlineStyle(state){
 				if(state == '在线'){
