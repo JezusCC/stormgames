@@ -1,7 +1,7 @@
 <template>
 	<div class="topbarbox">
 		<slot name="navlist"></slot>
-		<div class="special">
+		<div class="topbar-special">
 			<button class="downloadBtn" @click="downloadClient()">下载客户端</button>
 			<button class="loginBtn" @click="jumpLogin()">登录</button>
 		</div>
