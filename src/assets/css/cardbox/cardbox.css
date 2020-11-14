@@ -45,11 +45,28 @@
 }
 .cardbox ul li{
 	flex: 1;
-	width: 25%;
 	height: 88%;
 	margin: auto 0.125rem;
 	padding: 0;
 	background-color: rgba(0,0,0,0);
+}
+.cardbox-loading{
+	width: 10%;
+	height: 88%;
+	padding:6% 45%;
+	border: #0078F2 solid 0.125rem;
+	margin-bottom: 1rem;
+}
+@keyframes watingloading{
+	0%	{transform: rotateZ(0deg);}
+	50%	{transform: rotateZ(180deg);}
+	100%{transform: rotateZ(360deg);}
+}
+.cardbox-loading img{
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	animation: watingloading infinite 1s linear;
 }
 .cardbox ul li:hover{
 	cursor: pointer;
