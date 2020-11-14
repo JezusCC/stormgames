@@ -10,8 +10,8 @@ export default new Vuex.Store({
 		}
   },
   mutations: {
-		loginSuccess:(userData)=>{
-			this.state.user = userData
+		loginSuccess:(state,userData)=>{
+			state.user = userData
 		}
   },
   actions: {
