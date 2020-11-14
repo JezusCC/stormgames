@@ -7,6 +7,7 @@ import axios from 'axios'
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios
+Vue.prototype.$baseip = 'http://121.196.110.115:4000'
 
 new Vue({
   router,
