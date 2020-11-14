@@ -38,20 +38,58 @@
 			<div class="prodetail-head">
 				<h2>详细资料</h2>
 				<div>
-					<button>隐私设置</button>
-					<button>修改资料</button>
+					<button @click="modifyUserPrivacy()">隐私设置</button>
+					<button @click="modifyUserProfile()">修改资料</button>
 				</div>
 			</div>
 			<!-- 资料体 -->
 			<div class="prodetail-body">
-				<form action="">
-					<div><span>昵称:</span><input type="text" value="---"></div>
-					<div><span>生日:</span><input type="text" value="---"></div>
-					<div><span>性别:</span><input type="text" value="---"></div>
-					<div><span>地区:</span><input type="text" value="---"></div>
-					<div><span>手机:</span><input type="text" value="---"></div>
-					<div><span>实名认证:</span><input type="text" value="---"></div>
-					<div><input type="submit" value="保存资料"></div>	
+				<!-- 公开资料 -->
+				<form action="" v-if="(detailShowFlag == 0)||(detailShowFlag == 1) ">
+					<div>
+						<span>昵称:</span>
+						<input type="text" v-model="getUserDetail.username" 
+						:disabled="detailShowFlag==0">
+					</div>
+					<div>
+						<span>生日:</span>
+						<input type="text" v-model="getUserDetail.birthday" 
+						:disabled="detailShowFlag==0">
+					</div>
+					<div>
+						<span>性别:</span>
+						<input type="text" v-model="getUserDetail.sex" 
+						:disabled="detailShowFlag==0">
+					</div>
+					<div>
+						<span>地区:</span>
+						<input type="text" v-model="getUserDetail.area" 
+						:disabled="detailShowFlag==0">
+					</div>
+					<div>
+						<span>手机:</span>
+						<input type="text" v-model="getUserDetail.phone" 
+						:disabled="detailShowFlag==0">
+					</div>
+					<div>
+						<span>实名认证:</span>
+						<input type="text" v-model="getUserDetail.identity" 
+						:disabled="detailShowFlag==0">
+					</div>
+					<div>
+						<input type="submit" value="保存资料" v-show="detailShowFlag==1"
+						@click.prevent="submitModifyProfile(true)">
+						<input type="submit" value="放弃修改" v-show="detailShowFlag==1"
+						@click.prevent="submitModifyProfile(false)">
+					</div>	
+				</form>
+				<!-- 隐私设置 -->
+				<form action="" v-else-if="detailShowFlag == 2">
+					<div><span>修改隐私:</span><input type="text" value="---"></div>
+					<div>
+						<input type="button" value="提交修改" @click.prevent="submitModifyPrivacy(true)">
+						<input type="button" value="放弃修改" @click.prevent="submitModifyPrivacy(false)">
+					</div>			
 				</form>
 			</div>
 			<!-- 留言区 -->
@@ -82,10 +120,19 @@
 	export default {
 		data(){
 			return {
-				isModifySayInfo:false
+				isModifySayInfo:false,
+				detailShowFlag:0
 			}
 		},
 		methods:{
+			modifyUserProfile(){
+				//开启资料修改
+				this.detailShowFlag = 1
+			},
+			modifyUserPrivacy(){
+				//开启隐私修改
+				this.detailShowFlag = 2
+			},
 			modifySaiInfo(){
 				this.isModifySayInfo = true
 			},
@@ -93,11 +140,27 @@
 				//向服务器提交最新的签名
 				//...
 				this.isModifySayInfo = false
+			},
+			submitModifyProfile(flag){
+				if(flag){
+					//如果确认修改
+					//提交修改
+					alert('您的隐私信息已更新')
+				}
+				this.detailShowFlag = 0
+			},
+			submitModifyPrivacy(flag){
+				if(flag){
+					//如果确认修改
+					//提交修改
+					alert('您的隐私信息已更新')
+				}
+				this.detailShowFlag = 0
 			}
 		},
 		computed:{
 			getBackgroundImg(){
-				let imgsrc = 'http://localhost:4000/public/user/100000/backgd.png'
+				let imgsrc = 'http://121.196.110.115:4000/public/user/100000/backgd.png'
 				return 'background-image: url('+imgsrc+');'
 			},
 			getUserInfo(){

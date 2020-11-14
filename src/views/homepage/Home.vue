@@ -59,7 +59,7 @@
 				if(type === 'hot'){
 					//请求
 					return [
-						{imgurl:'aaa',jmpurl:'http://localhost:4000/test'},
+						{imgurl:'aaa',jmpurl:'http://121.196.110.115:4000/test'},
 						{imgurl:'aaa',jmpurl:'https://www.baidu.com'},
 						{imgurl:'aaa',jmpurl:'bbb'},
 						{imgurl:'aaa',jmpurl:'bbb'}
