@@ -109,7 +109,16 @@
 	padding: 0.125rem 0.25rem;
 	margin-left: 0.5rem ;
 }
+.prodetail-body input[type=button]{
+	width: 5rem;
+	background-color: #0078F2;
+	padding: 0.125rem 0.25rem;
+	margin-left: 0.5rem ;
+}
 .prodetail-body input[type=submit]:hover{
+	background-color: #36C84E;
+}
+.prodetail-body input[type=button]:hover{
 	background-color: #36C84E;
 }
 .prodetail-record{
