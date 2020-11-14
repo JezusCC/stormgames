@@ -100,7 +100,7 @@
 		},
 		methods:{
 			getUserLibirarys(){
-				this.$axios.get('http://localhost:4000/userlibirary')
+				this.$axios.get('http://121.196.110.115:4000/userlibirary')
 				.then((result)=>{
 					this.gamesList = result.data.items
 				})

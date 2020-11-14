@@ -6,7 +6,7 @@
 				<li><router-link to="/home">主页</router-link></li>
 				<li><router-link to="/libirary">库</router-link></li>
 				<li><router-link to="/profile">个人资料</router-link></li>
-				<li><router-link to="news">游戏新闻</router-link></li>
+				<li><router-link to="/shopcart">购物车</router-link></li>
 			</ul>
 		</div>
 		<!-- 左侧固定标签 -->
@@ -91,7 +91,7 @@
 				}
 			},
 			jumpToSearch(){
-				this.$router.push('/search_product')
+				this.$router.push('/product')
 			},
 			toTop(){
 				window.scrollTo(0,0)

@@ -1,5 +1,6 @@
 <template>
 	<div class="probox" :style="getBackgroundImg">
+		<h2>基本资料</h2>
 		<!-- 头部 -->
 		<div class="probasic">
 			<!-- 头像 -->
@@ -73,8 +74,8 @@
 					</div>
 					<div>
 						<span>实名认证:</span>
-						<input type="text" v-model="getUserDetail.identity" 
-						:disabled="detailShowFlag==0">
+						<input type="text" :value="getUserDetail.identity?'已实名':'未实名'" 
+						disabled>
 					</div>
 					<div>
 						<input type="submit" value="保存资料" v-show="detailShowFlag==1"
@@ -92,10 +93,18 @@
 					</div>			
 				</form>
 			</div>
+			<!-- 最近常玩 -->
+			<div class="prodetail-playinfo">
+				<h2>最近常玩</h2>
+				<ul v-if="getPlayInfo.length>0">
+					<li></li>
+				</ul>
+				<p v-else>您暂时还没有游玩记录</p>
+			</div>
 			<!-- 留言区 -->
 			<div class="prodetail-record">
 				<h2>用户留言</h2>
-				<ul>
+				<ul v-if="getRecordList.length>0">
 					<li>
 						<!-- 留言样式 -->
 						<div class="prodetail-record-item">
@@ -111,6 +120,7 @@
 						</div>
 					</li>
 				</ul>
+				<p v-else>留言板空空如也</p>
 			</div>
 		</div>
 	</div>
@@ -145,7 +155,7 @@
 				if(flag){
 					//如果确认修改
 					//提交修改
-					alert('您的隐私信息已更新')
+					alert('您的个人资料已更新')
 				}
 				this.detailShowFlag = 0
 			},
@@ -181,6 +191,12 @@
 					phone:'170****3351',
 					identity:true
 				}
+			},
+			getPlayInfo(){
+				return []
+			},
+			getRecordList(){
+				return []
 			}
 		}
 	}
