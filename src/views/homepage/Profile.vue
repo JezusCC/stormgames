@@ -170,7 +170,7 @@
 		},
 		computed:{
 			getBackgroundImg(){
-				let imgsrc = 'http://121.196.110.115:4000/public/user/100000/backgd.png'
+				let imgsrc = this.$baseip+'/public/user/'+this.$store.state.user.id+'/background.jpg'
 				return 'background-image: url('+imgsrc+');'
 			},
 			getUserInfo(){
