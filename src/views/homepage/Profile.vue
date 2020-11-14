@@ -4,7 +4,7 @@
 		<!-- 头部 -->
 		<div class="probasic">
 			<!-- 头像 -->
-			<img src="" alt="">
+			<img :src="getUserHeadImg" alt="">
 			<!-- 基本资料显示区 -->
 			<div class="probasic-info">
 				<!-- 账户名 -->
@@ -172,6 +172,9 @@
 			getBackgroundImg(){
 				let imgsrc = this.$baseip+'/public/user/'+this.$store.state.user.id+'/background.jpg'
 				return 'background-image: url('+imgsrc+');'
+			},
+			getUserHeadImg(){
+				return this.$baseip+'/public/user/'+this.$store.state.user.id+'/head.jpeg'
 			},
 			getUserInfo(){
 				return {
