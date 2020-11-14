@@ -71,7 +71,7 @@
 				},pass)
 			},
 			getCarousels(){
-				this.$axios.get('http://localhost:4000/carousel').then(
+				this.$axios.get('http://121.196.110.115:4000/carousel').then(
 				(result)=>{
 					this.carouselArr = result.data.items
 				})
