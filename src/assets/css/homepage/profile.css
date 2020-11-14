@@ -4,8 +4,12 @@
 	margin-top: 1rem;
 	background-color: #0078F2;
 	background-size: 100% 100%;
-		border: #0078F2 solid 0.125rem;
 	color: #FCFCFC;
+}
+.probox>h2{
+	font-size: 2rem;
+	background-color: #0078F2;
+	padding-left: 1rem;
 }
 .probasic{
 	width: 100%;
@@ -87,6 +91,7 @@
 }
 .prodetail-body{
 	width: 100%;
+	margin-bottom: 0.25rem;
 }
 .prodetail-body div{
 	margin: 0.25rem 0;
@@ -121,6 +126,23 @@
 .prodetail-body input[type=button]:hover{
 	background-color: #36C84E;
 }
+.prodetail-playinfo{
+	width: 100%;
+	margin-bottom: 0.5rem;
+}
+.prodetail-playinfo h2{
+	width: 10rem;
+	color: #FCFCFC;
+	background-color: #0078F2;
+	text-align: center;
+}
+.prodetail-playinfo p{
+	height: 3rem;
+	text-align: center;
+	font-size: 1.5rem;
+	border-top: #0078F2 solid 0.125rem;
+	border-bottom: #0078F2 solid 0.125rem;
+}
 .prodetail-record{
 	width: 100%;
 }
@@ -130,8 +152,17 @@
 	background-color: #0078F2;
 	text-align: center;
 }
+.prodetail-record>p{
+	height: 3rem;
+	text-align: center;
+	font-size: 1.5rem;
+	border-top: #0078F2 solid 0.125rem;
+	border-bottom: #0078F2 solid 0.125rem;
+}
 .prodetail-record-item{
-	border: #0078F2 solid 0.0625rem;
+	border-top: #0078F2 solid 0.125rem;
+	border-bottom: #0078F2 solid 0.125rem;
+	margin-bottom: 0.25rem;
 }
 .prodetail-record-item img{
 	min-width: 2rem;
@@ -140,6 +171,7 @@
 	max-height: 2rem;
 	width: 100%;
 	height: 100%;
+	margin-left: 0.125rem;
 }
 .prodetail-record-item div{
 	display: inline-block;
