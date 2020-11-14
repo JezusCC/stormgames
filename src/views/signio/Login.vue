@@ -20,7 +20,7 @@
           v-model="loginpassword"
         />
         <div class="login-option">
-          <button @click="loginBtn()">登录</button>
+          <button @click.prevent="loginBtn()">登录</button>
           <a href="">忘记密码？</a>
         </div>
       </form>
@@ -44,11 +44,17 @@ export default {
   },
   methods: {
     loginBtn() {
-      // this.$axios
-      //   .get("#", {
-      //     params: { username: this.loginname, userpwd: this.loginpassword },
-      //   })
-      //   .then(() => {this.$store.});
+      let loginhead = { uname: this.loginname, upwd: this.loginpassword };
+      this.$axios.post(this.$baseip + '/login?uname = ' + this.loginname + '&pwd = ' + this.loginpassword).then(
+        (result) => {
+          if(result.data.state){
+            console.log(result.data.message)
+            this.$store.
+          }
+          this.$router.push("/")
+        },
+        (err) => console.log(err)
+      );
     },
     jumpToRegister() {
       this.$router.push("/register");
