@@ -44,14 +44,19 @@ export default {
   },
   methods: {
     loginBtn() {
-      let loginhead = { uname: this.loginname, upwd: this.loginpassword };
+      // let loginhead = { uname: this.loginname, upwd: this.loginpassword };
+      console.log('正在发送登录请求')
       this.$axios.post(this.$baseip + '/login?uname = ' + this.loginname + '&pwd = ' + this.loginpassword).then(
         (result) => {
           if(result.data.state){
             console.log(result.data.message)
-            this.$store.
+            this.$store.commit('loginSuccess',{
+              id: 100000
+            })
+            this.$router.push("/")
+          }else{
+            console.log(result.data.message)
           }
-          this.$router.push("/")
         },
         (err) => console.log(err)
       );
