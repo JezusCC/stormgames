@@ -17,8 +17,7 @@
           placeholder="邮箱"
           name="useremail"
           v-model="email"
-          @click="emailArr"
-          :style="emailErr()"
+          :class="{'checkerror': checkRegular()}"
         />
         <span>账户密码</span>
         <input
@@ -30,7 +29,7 @@
         <span>确认您的账户密码</span>
         <input
           type="password"
-          placeholder="确认您的账户密码"
+          placeholder="确认您的密码"
           name="upwd"
           v-model="samepassword"
         />
@@ -50,32 +49,30 @@
 export default {
   data() {
     return {
-      name: "",
-      email: "",
-      password: "",
-      samepassword: "",
+      name: '',
+      email: '',
+      password: '',
+      samepassword: '',
     };
   },
   methods: {
     registerBtn() {
-      console.log("registerBtn");
+      console.log('registerBtn');
     },
-    emailArr() {
+    checkRegular() {
       //验证邮箱正则
-      var regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-      if(this.email !='' && !regEmail.test(this.email)) {
-        //报错
+      let regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+      if(this.email =='' || !regEmail.test(this.email)) {
+        console.log('有错')
+        //no BUG！！！
+        return true
+      }else{
+        console.log('ok')
+        return false
       }
     },
-    //
-    emailErr() {
-      return {
-        'border':'solid 0.125rem #FF0000'
-      }
-    },
-
     backToRegister() {
-      this.$router.push("/login");
+      this.$router.push('/login');
     },
   },
 };

@@ -20,14 +20,12 @@
           v-model="loginuserpassword"
         />
         <div class="login-option">
-          <!-- <input type="submit" value="登录" /> -->
           <button @click.prevent="loginBtn">登录</button>
           <a href="">忘记密码？</a>
         </div>
       </form>
     </div>
     <div class="login-right">
-      <!-- news-Right and register -->
       <div class="login-right-news"></div>
       <a @click.prevent="jumpToRegister()">加入Storm</a>
     </div>
@@ -36,7 +34,7 @@
 
 <script>
 export default {
-  name: "",
+  name: '',
   data() {
     return {
       loginusername: '',
@@ -45,7 +43,6 @@ export default {
   },
   methods: {
     loginBtn() {
-      // let loginhead = { uname: this.loginname, upwd: this.loginpassword };
       console.log('正在发送登录请求')
       this.$axios(
         {
@@ -60,7 +57,7 @@ export default {
             this.$store.commit('loginSuccess',{
               id: 100000
             })
-            this.$router.push("/")
+            this.$router.push('/')
           }else{
             console.log(result.data.message)
           }
@@ -68,11 +65,8 @@ export default {
         (err) => console.log(err)
       );
     },
-    // submitLoginInfo(){
-    //   return this.$baseip+'/login'
-    // },
     jumpToRegister() {
-      this.$router.push("/register");
+      this.$router.push('/register');
     },
   },
 };

@@ -63,3 +63,6 @@
   height: 22rem;
   /* background-color: violet; */
 }
+.checkerror{
+  border: #fc2222 solid 0.125rem !important;
+}
