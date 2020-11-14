@@ -2,11 +2,12 @@
 	<!-- 使用浮动布局，可容纳四个卡片，包含一个更多标签 -->
 	<div class="cardbox">
 		<div class="cardhead"><span>{{name}}</span><button>浏览更多</button></div>
-		<ul>
+		<ul v-if="items.length>0">
 			<li v-for="(item,index) in items">
 				<img :src="item.imgurl"  @click="jumpUrl(index,$event)" alt="">
 			</li>
 		</ul>
+		<div class="cardbox-loading" v-else><img src="../../assets/img/sprite/loading.png" alt=""></div>
 	</div>
 </template>
 
