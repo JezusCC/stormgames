@@ -21,8 +21,8 @@ const routes = [
 	  component: () => import('../views/homepage/Profile.vue')
 	},
 	{
-	  path: '/news',
-	  component: () => import('../views/homepage/News.vue')
+	  path: '/shopcart',
+	  component: () => import('../views/homepage/Shopcart.vue')
 	},
 	{
 		path:'/login',
@@ -34,7 +34,11 @@ const routes = [
 	},
 	{
 			path:'/download',
-			component:() => import('../components/topbar/download.vue')
+			component:() => import('../views/homepage/Download.vue')
+	},
+	{
+		path:'/product',
+		component:() => import('../views/homepage/Product.vue')
 	},
 	{
 		path:'/shopserver',
