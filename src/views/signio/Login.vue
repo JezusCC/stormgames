@@ -4,23 +4,24 @@
     <div class="login-left">
       <!-- login-Left -->
       <h2>登录</h2>
-      <form action="#">
+      <form>
         <span>Storm账号名</span>
         <input
           type="text"
           placeholder="输入您的账号"
           name="username"
-          v-model="loginname"
+          v-model="loginusername"
         />
         <span>Storm通行密码</span>
         <input
           type="password"
           placeholder="输入您的密码"
           name="password"
-          v-model="loginpassword"
+          v-model="loginuserpassword"
         />
         <div class="login-option">
-          <button @click.prevent="loginBtn()">登录</button>
+          <!-- <input type="submit" value="登录" /> -->
+          <button @click.prevent="loginBtn">登录</button>
           <a href="">忘记密码？</a>
         </div>
       </form>
@@ -38,15 +39,21 @@ export default {
   name: "",
   data() {
     return {
-      loginname: "",
-      loginpassword: "",
+      loginusername: '',
+      loginuserpassword: '',
     };
   },
   methods: {
     loginBtn() {
       // let loginhead = { uname: this.loginname, upwd: this.loginpassword };
       console.log('正在发送登录请求')
-      this.$axios.post(this.$baseip + '/login?uname=' + this.loginname + '&pwd=' + this.loginpassword).then(
+      this.$axios(
+        {
+          method:'post',
+          url:this.$baseip+'/login',
+          data:{uname:this.loginusername,pwd:this.loginuserpassword}
+        }
+      ).then(
         (result) => {
           if(result.data.state){
             console.log(result.data.message)
@@ -61,6 +68,9 @@ export default {
         (err) => console.log(err)
       );
     },
+    // submitLoginInfo(){
+    //   return this.$baseip+'/login'
+    // },
     jumpToRegister() {
       this.$router.push("/register");
     },
