@@ -46,7 +46,7 @@ export default {
     loginBtn() {
       // let loginhead = { uname: this.loginname, upwd: this.loginpassword };
       console.log('正在发送登录请求')
-      this.$axios.post(this.$baseip + '/login?uname = ' + this.loginname + '&pwd = ' + this.loginpassword).then(
+      this.$axios.post(this.$baseip + '/login?uname=' + this.loginname + '&pwd=' + this.loginpassword).then(
         (result) => {
           if(result.data.state){
             console.log(result.data.message)
