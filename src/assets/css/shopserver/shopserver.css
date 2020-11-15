@@ -1,13 +1,21 @@
 .max{
 	margin: 0 auto;
-	width: 100%;
+	width: 70%;
 	color: #FFFFFF;
+}
+.max p{
+	margin: 2rem 0 2rem 0;
+	font-size: 3rem;
+	font-weight: 100;
+}
+.max span{
+	font-size: 2.5rem;
+	font-weight: 100;
 }
 .changebox{
 	display: flex;
 	margin: 0 auto;
-	padding-top: 10%;
-	width: 37.979375rem;
+	padding-top: 4%;
 	height: 200px;
 }
 .server_left{
@@ -15,35 +23,71 @@
 	position: absolute
 }
 .server_left ul li{
-	width: 6rem;
-	height: 1.3rem;
-	padding: 1rem;
+	width: 8rem;
+	height: 4rem;
 	border-radius: 0 1.25rem 1.25rem 0;
 	background-color: #0078F2;
 	text-align: center;
-	line-height: 1.3rem;
+	line-height: 4rem;
+	font-size: 1.125rem;
 	transition: width 0.5s;
 	transform-origin: left;
 }
 .server_left ul li:hover{
-	width: 7rem;
+	width: 10rem;
 }
 .server_right{
 	flex: 4;
 	height: 13.2rem;
-
 	text-indent: 10rem;
 	transition: 1s all;
 }
 .server_right ul li{
-	padding: 1rem;
+	text-align: right;
+	height: 4rem;
+	line-height: 4rem;
+	font-size: 1.125rem;
 }
 .server_right form{
-	float: right;
-	width: 31rem;
-	text-indent: 2.5rem;
-	height: 13.2rem;
+	width: 100%;
+	margin: 0 auto;	
 }
+.close{
+	float: right;
+	font-size: 2rem;
+	width: 0px;
+	height: 0px;
+}
+.server_right form table{
+	margin: 0 auto;
+	font-size: 1rem;
+}
+.server_right form table tr:first-child h3{
+	font-weight: 100;
+}
+.server_right form table input{
+	margin-top: 15px;
+	height: 20px;
+	outline: none;
+}
+.server_right form table input[type="radio"]{
+	vertical-align: sub;
+}
+.server_right form table tr textarea{
+	margin-left: 10rem;
+	resize: none;
+	outline: none;
+}
+.server_right form table tr:last-child input{
+	margin-left: 9.0625rem;
+	width: 5rem;
+	height: 2rem;
+	border-radius: 1rem;
+	border: none;
+	background-color: rgb(0, 120, 242);
+	color: #FCFCFC;
+}
+
 .max button{
 	position: absolute;
 	bottom: 0.5rem;
