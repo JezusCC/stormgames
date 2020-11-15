@@ -5,9 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-		user:{
-			id:100000
-		}
+		user:null
   },
   mutations: {
 		loginSuccess:(state,userData)=>{
