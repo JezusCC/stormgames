@@ -84,6 +84,17 @@
 	margin-left: 5%;
 	border-left: #0078F2 solid 0.25rem;
 }
+.timeline-nonews{
+	margin-top: 2rem;
+	width: 90%;
+	border: #0078F2 solid 0.125rem;
+}
+.timeline-nonews p{
+	font-size: 1.5rem;
+	text-align: center;
+	color: #FCFCFC;
+}
+
 .timeline-item{
 	width: 95%;
 }
@@ -123,6 +134,10 @@
 	margin: 0rem 1rem 1% 1%;
 	border-radius: 0.25rem;
 	border: #0078F2 solid 0.125rem;
+}
+.libright-card p{
+	color: #FCFCFC;
+	text-align: center;
 }
 .libright-card h4{
 	color: #FCFCFC;
