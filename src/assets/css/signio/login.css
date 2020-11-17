@@ -4,19 +4,19 @@
   display: flex;
   margin-top: 5rem;
   border-radius: 0.25rem;
-  background-color: #2a2a2a;
+  background-color: #FCFCFC;
 }
 .login-left{
   flex: 1;
 }
 .login-left h2{
   text-align: center;
-  color: #FCFCFC;
+  color: #2a2a2a;
   margin-bottom: 1rem;
 }
 .login-left span{
   font-size: 1rem;
-  color: #fcfcfc;
+  color: #2a2a2a;
   display: inline-block;
   margin-bottom: 0.5rem;
   padding-left: 2rem;
@@ -33,7 +33,7 @@
   border: none;
   border-bottom: #FCFCFC solid 0.125rem;
   background-color: rgba(1, 1, 1, 0.05);
-  color: #FCFCFC;
+  color: #2a2a2a;
 }
 .login-option{
   display: flex;
@@ -49,6 +49,7 @@
 }
 .login-option a{
   flex: 1;
+  color: 	var(--BASE_FONTCOLOR);
   text-align: right;
   line-height: 3rem;
 }
@@ -64,5 +65,6 @@
 }
 .login-right a{
   flex: 1;
+  color: 	var(--BASE_FONTCOLOR);
   text-align: center;
 }
