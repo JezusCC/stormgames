@@ -1,7 +1,7 @@
 <template>
 	<div class="max">
 		<p>stormgames客服</p>
-		<span>尊敬的用户，您有什么需要帮忙的吗？</span>
+		<span>{{getUserInfo.account}}，您有什么需要帮忙的吗？</span>
 		<div class="changebox">
 			<div class="server_left">
 				<ul>
@@ -138,11 +138,11 @@
 					<div class="close" @click="resetClickItem()">
 						<strong>✖</strong>
 					</div>
-					123456
+					
 				</form>
 			</div>
 		</div>
-		<button>人工客服</button>
+		<button @click="warningCilckItem()">人工客服</button>
 	</div>
 </template>
 <script>
@@ -153,19 +153,12 @@
 				serverOption:[
 					'游戏添加', 
 					'商品问题',
-					'充值问题',
-					'1234567'
+					'充值问题'
 				],
 				more:[
 					'游戏未添加到我库中，游戏序列号出错等',
 					'退款，DLC或额外内容缺少等',
-					'充值未到账，我的扣除金额有误等',
-					'aaaaaaaaaaaaaaaa'
-				],
-				goods:[
-					'1212',
-					'2212',
-					'3212',
+					'充值未到账，我的扣除金额有误等'
 				],
 				clickItem:1000
 			}
@@ -187,7 +180,16 @@
 			},
 			resetClickItem(){
 				this.clickItem = 1000
-			}	
+			},
+			warningCilckItem(){
+				alert('哎呀，网络繁忙，与客服小姐姐联系中断！')
+			}
+			
+		},
+		computed:{
+			getUserInfo(){
+				return this.$store.state.user
+			}
 		}
 	}
 </script>
