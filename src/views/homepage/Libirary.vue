@@ -112,7 +112,7 @@
 				})
 			},
 			getCurrentGamesInfo(pid){
-				this.$axios.get(this.$baseip+'/gameinfo?pid='+pid+'&uid='+this.$store.state.user.id)
+				this.$axios.get(this.$baseip+'/gameinfo?pid='+pid+'&uid='+this.$store.state.user.uid)
 				.then((result)=>{
 					this.currentGamesDetail = result.data.gameinfo.detail
 					this.currentGameAchievements = result.data.gameinfo.achivements
