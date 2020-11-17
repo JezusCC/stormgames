@@ -53,10 +53,11 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to,from,next)=>{
-	if(to.path == '/libirary' || to.path == '/profile'){
-		//if(store.state.user==null){
-		//	next('login')
-		//}
+	if(to.path == '/libirary' || to.path == '/profile' || to.path == '/shopcart'){
+		if(store.state.user==null){
+			alert('您需要先登录才可访问')
+			next('login')
+		}
 	}
 	next()
 })
