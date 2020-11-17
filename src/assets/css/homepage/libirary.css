@@ -10,7 +10,7 @@
 	margin-right: 0.5rem;
 }
 .gategory h2{
-	color: #FCFCFC;
+	color: #000000;
 	margin-bottom: 1rem;
 }
 .gategory-list{
@@ -19,10 +19,11 @@
 	margin-bottom: 1rem;
 }
 .gategory-list h3{
+	color: #FCFCFC;
 	background-color: #0078F2;
 }
 .gategory-list ul li{
-	color :#FCFCFC;
+	color :#848484;
 	margin: 0.5rem 0;
 	padding: 0 0 0 1rem;
 }
@@ -70,14 +71,14 @@
 }
 .detail-header button{
 	flex: 2;
-	background-color: #0078F2;
+	background-color: #000000;
 	border: none;
-	border: #0078F2 0.0625rem solid;
+	/* border: #0078F2 0.0625rem solid; */
 	margin: 0.125rem 0.125rem;
 }
 .detail-header button:hover{
 	cursor: pointer;
-	background-color: #36c84e;
+	background-color: #0078F2;
 }
 .timeline{
 	width: 95%;
@@ -119,7 +120,7 @@
 }
 .timeline-item-body{
 	max-width: 70%;
-	color: #FCFCFC;
+	color: #2A2A2A;
 	transform: translateX(6.75rem) translateY(-1.25rem);
 	border: #0078F2 solid 0.125rem;
 	border-radius: 0.5rem;
@@ -136,7 +137,7 @@
 	border: #0078F2 solid 0.125rem;
 }
 .libright-card p{
-	color: #FCFCFC;
+	color: #2A2A2A;
 	text-align: center;
 }
 .libright-card h4{

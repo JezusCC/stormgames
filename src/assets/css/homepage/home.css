@@ -1,14 +1,11 @@
 .contain{
 	width: 70%;
 	margin: 0 auto;
-	/* position: relative; */
 }
 .nav{
 	width: 50%;
 	height: 4rem;
 	margin: 2rem auto;
-	background-color: rgba(0,0,0,0);
-	border: #0078F2 solid 0.125rem;
 }
 .nav ul{
 	display: flex;
@@ -17,26 +14,27 @@
 	flex: 1;
 	text-align: center;
 	line-height: 4rem;
+	background-color: #000000;
 }
 .nav ul li:hover{
-	color: #0078F2;
+	background-color: #0078F2;
 }
 .categorybox{
-	color: #FFFFFF;
+	color: #333333;
 	width: 10%;
 	position: fixed;
 	left: 2.5%;
 	/* position: absolute; */
 	/* left: -16%; */
-	background-color: rgba(40,40,220,0.05);
+	background-color: rgba(188,188,188,0.15);
 	border-bottom-left-radius: 0.35rem;
 	border-bottom-right-radius: 0.35rem;
-	border-bottom: #0078F2 solid 0.25rem;
+	border-bottom: #000000 solid 0.25rem;
 }
 .categorybox h4{
+	color: #FCFCFC;
+	background-color: #000000;
 	font-size: 1.5rem;
-	border-bottom: #FCFCFC solid 0.25rem;
-	background-color: #0078F2;
 	text-align: center;
 	border-top-left-radius: 0.25rem;
 	border-top-right-radius: 0.25rem;
