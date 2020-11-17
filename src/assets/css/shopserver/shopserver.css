@@ -1,7 +1,7 @@
 .max{
 	margin: 0 auto;
 	width: 70%;
-	color: #FFFFFF;
+	color: var(--BASE_FONTCOLOR);
 }
 .max p{
 	margin: 2rem 0 2rem 0;
@@ -16,7 +16,7 @@
 	display: flex;
 	margin: 0 auto;
 	padding-top: 4%;
-	height: 200px;
+	height: 12.5rem;
 }
 .server_left{
 	flex: 1;
@@ -26,7 +26,6 @@
 	width: 8rem;
 	height: 4rem;
 	border-radius: 0 1.25rem 1.25rem 0;
-	background-color: #0078F2;
 	text-align: center;
 	line-height: 4rem;
 	font-size: 1.125rem;
@@ -39,7 +38,6 @@
 .server_right{
 	flex: 4;
 	height: 13.2rem;
-	text-indent: 10rem;
 	transition: 1s all;
 }
 .server_right ul li{
@@ -50,37 +48,40 @@
 }
 .server_right form{
 	width: 80%;
-	margin: 0 auto;	
+	margin: 0 auto;		
 }
 .close{
-	margin-left: 37.5rem;
-	font-size: 2rem;
-	width: 0px;
-	height: 0px;
+	text-align: right;
+	cursor:pointer;
 }
 .server_right form table{
-	padding-left: 2rem;
+	margin-left: 3rem;
 	font-size: 1rem;
 	border: 0.0625rem solid rgb(0, 120, 242);
+	border-radius: 0.5rem;
 }
-.server_right form table tr:first-child h3{
+.server_right form table tr{
+	text-indent: 2rem;
+}
+.server_right form table tr h3{
 	font-weight: 100;
 }
 .server_right form table input{
-	margin-top: 15px;
-	height: 20px;
+	height: 1.25rem;
 	outline: none;
 }
 .server_right form table input[type="radio"]{
 	vertical-align: sub;
 }
 .server_right form table tr textarea{
+	margin-left: 2rem;
 	resize: none;
 	outline: none;
 }
 .server_right form table tr:last-child input{
 	margin-left: 9.0625rem;
-	width: 5rem;
+	margin: 1;
+	width: 7rem;
 	height: 2rem;
 	border-radius: 1rem;
 	border: none;
