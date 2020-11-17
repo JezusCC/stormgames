@@ -53,10 +53,8 @@ export default {
       ).then(
         (result) => {
           if(result.data.state){
-            console.log(result.data.message)
-            this.$store.commit('loginSuccess',{
-              id: 100000
-            })
+            console.log(result.data)
+            this.$store.commit('loginSuccess',result.data)
             this.$router.push('/')
           }else{
             console.log(result.data.message)
