@@ -19,11 +19,10 @@
 .cardhead span{
 	width: 8rem;
 	padding-top: 1rem;
-	background-color: #0078F2;
+	background-color: #000000;
 	color: #FCFCFC;
 	text-align: center;
 	font-size: 1.25rem;
-	border: #0078F2 solid 0.125rem;
 	border-radius: 0.25rem 0.25rem 0 0;
 }
 .cardhead button{
@@ -41,7 +40,7 @@
 	margin: 0;
 	padding: 0;
 	background-color: rgba(0,0,0,0);
-	border: #0078F2 solid 0.125rem;
+	border: #000000 solid 0.125rem;
 }
 .cardbox ul li{
 	flex: 1;
@@ -54,7 +53,7 @@
 	width: 10%;
 	height: 88%;
 	padding:6% 45%;
-	border: #0078F2 solid 0.125rem;
+	border: #000000 solid 0.125rem;
 	margin-bottom: 1rem;
 }
 @keyframes watingloading{
