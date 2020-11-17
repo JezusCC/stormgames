@@ -170,20 +170,14 @@
 		},
 		computed:{
 			getBackgroundImg(){
-				let imgsrc = this.$baseip+'/public/user/'+this.$store.state.user.id+'/background.jpg'
+				let imgsrc = this.$baseip+'/public/user/'+this.$store.state.user.uid+'/background.jpg'
 				return 'background-image: url('+imgsrc+');'
 			},
 			getUserHeadImg(){
-				return this.$baseip+'/public/user/'+this.$store.state.user.id+'/head.jpeg'
+				return this.$baseip+'/public/user/'+this.$store.state.user.uid+'/head.jpeg'
 			},
 			getUserInfo(){
-				return {
-					uid:100000,
-					account:'administrator',
-					money:3005.27,
-					allplay:198,
-					sayinfo:'我就是我,不一样的烟火'
-				}
+				return this.$store.state.user
 			},
 			getUserDetail(){
 				return {

@@ -30,7 +30,7 @@
 			},
 			userHeadImg(){
 				return 'background-image: url('+
-				this.$baseip+'/public/user/'+this.$store.state.user.id+'/head.jpeg);'
+				this.$baseip+'/public/user/'+this.$store.state.user.uid+'/head.jpeg);'
 				+'background-size:100% 100%;'
 			}
 		}
