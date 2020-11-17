@@ -121,6 +121,9 @@
 				},(err)=>{
 					console.log(err)
 				})
+				// this.currentGameNews = [
+				// 	{date:'2000-03-03',title:'更新',content:'我们有更新了'}
+				// ]
 			},
 			getProcessCategory(){
 				let ret = []

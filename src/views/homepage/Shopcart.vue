@@ -53,7 +53,7 @@
 			return {
 				shopcart:[
 					{imgurl:'aaa',name:'GTA V',price:59,count:1,selected:false,recived:'2812903195@qq.com'},
-					{imgurl:'aaa',name:'The Witcher:Wild Hunter',price:38,count:1,selected:false,recived:'2812903195@qq.com'},
+					{imgurl:'aaa',name:'CS:GO',price:78,count:1,selected:false,recived:'2812903195@qq.com'},
 					
 				],
 				allSelected:false
