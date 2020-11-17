@@ -18,35 +18,43 @@
 					</li>
 				</ul>
 				<form action="" v-else-if="clickItem == 0">
-					<div class="close" @click="resetClickItem()">
-						<strong>✖</strong>
-					</div>
-					<table>
+					<table>	
 						<tr>
-							<h3>您是否有无法在Stormgames游戏库中搜索到的游戏呢？</h3>	
-							<h3>请您帮我们一起完善Stormgames的游戏库吧！</h3>
+							<td>
+								<h3>您是否有无法在Stormgames游戏库中搜索到的游戏呢？</h3>	
+							</td>
+							<td class="close" @click="resetClickItem()">
+								✖
+							</td>
+						</tr>
+						<tr>
+							<h3>请您帮我们一起完善Stormgames的游戏库吧！</h3>	
+						</tr>
+						<tr>
 							<h3>请在下面的方框内填写相关信息，我们会在2个工作日内给您答复！</h3>
+						</tr>
+						<tr>
 							<h3>感谢您对Stormgames的支持！</h3>
 						</tr>
 						<tr>
-							游戏名称：
+							游 戏 名 称 ：
 							<input type="text" name="gname" required>
 							<span style="color: #FF0000; font-size: 1.5rem;">&nbsp;*</span>
 						</tr>
 						<tr>
-							游戏类型：
+							游 戏 类 型 ：
 							<input type="text" name="kind">
 						</tr>
 						<tr>
-							游戏发行时间：
+							发 行 时 间 ：
 							<input type="text" name="time">
 						</tr>
 						<tr>
-							开发商：
+							游戏开发商：
 							<input type="text" name="kind">
 						</tr>
 						<tr>
-							发行商：
+							游戏发行商：
 							<input type="text" name="kind">
 						</tr>
 						<tr>
@@ -55,12 +63,14 @@
 					</table>
 				</form>
 				<form action="" v-else-if="clickItem == 1">
-					<div class="close" @click="resetClickItem()">
-						<strong>✖</strong>
-					</div>
 					<table>
 						<tr>
-							<h3>您的商品出现了那些问题？</h3>
+							<td>
+								<h3>您的商品出现了那些问题？</h3>
+							</td>
+							<td class="close"  @click="resetClickItem()">
+									✖		
+							</td>
 						</tr>
 						<tr>
 							游戏名称：
@@ -98,24 +108,39 @@
 						<tr>
 							<input type="submit" name="submit">
 						</tr>
+						
 					</table>
 				</form>
 				<form action="" v-else-if="clickItem == 2">
-					<div class="close" @click="resetClickItem()">
-						<strong>✖</strong>
-					</div>
 					<table>
 						<tr>
-							请输入您的订单号：
-							<input type="text" name="ONumber" required>
-							<span style="color: #FF0000; font-size: 1.5rem;">&nbsp;*</span>
+							<td>
+								请输入您的订单号：
+								<input type="text" name="ONumber" required>
+								<span style="color: #FF0000; font-size: 1.5rem;">&nbsp;*</span>
+							</td>
+							<td class="close"  @click="resetClickItem()">
+								✖
+							</td>
 						</tr>
 						<tr>
 							请选择您当时充值的方式：
-							微信支付<input type="radio">
-							支付宝支付<input type="radio">
-							银行卡支付<input type="radio">
-							充值卡支付<input type="radio">
+						</tr>
+						<tr>
+							<td>
+								微信支付<input type="radio">
+							</td>
+							<td>
+								支付宝支付<input type="radio">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								银行卡支付<input type="radio">
+							</td>
+							<td>
+								充值卡支付<input type="radio">
+							</td>
 						</tr>
 						<tr>
 							充值金额未到账
