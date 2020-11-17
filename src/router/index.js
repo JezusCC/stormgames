@@ -7,7 +7,15 @@ const routes = [
   {
     path: '/',
     redirect:'/home'
-  },
+	},
+	{
+		path: '/community',
+		component: () => import('../views/community/Community.vue')
+	},
+	{
+		path: '/developer',
+		component: () => import('../views/developer/Developer.vue')
+	},
   {
     path: '/home',
     component: () => import('../views/homepage/Home.vue')

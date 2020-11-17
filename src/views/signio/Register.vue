@@ -63,15 +63,16 @@ export default {
       //验证邮箱正则
       let regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
       if(this.email =='' || !regEmail.test(this.email)) {
-        console.log('有错')
+        // console.log('有错')
         //no BUG！！！
+        // callback(new error('邮箱不规范'))
         return true
       }else{
-        console.log('ok')
+        // console.log('ok')
         return false
       }
     },
-    backToRegister() {
+    backToRegister(){
       this.$router.push('/login');
     },
   },
