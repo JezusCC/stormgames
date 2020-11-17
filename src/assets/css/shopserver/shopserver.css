@@ -49,8 +49,9 @@
 	font-size: 1.125rem;
 }
 .server_right form{
-	width: 100%;
+	width: 80%;
 	margin: 0 auto;	
+	
 }
 .close{
 	float: right;
@@ -59,8 +60,9 @@
 	height: 0px;
 }
 .server_right form table{
-	margin: 0 auto;
+	padding-left: 2rem;
 	font-size: 1rem;
+	border: 0.0625rem solid rgb(0, 120, 242);
 }
 .server_right form table tr:first-child h3{
 	font-weight: 100;
