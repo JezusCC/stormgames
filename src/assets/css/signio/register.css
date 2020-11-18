@@ -4,19 +4,19 @@
   display: flex;
   margin-top: 5rem;
   border-radius: 0.25rem;
-  background-color:#2a2a2a;
+  background-color:#FCFCFC;
 }
 .register-left{
   flex: 1;
 }
 .register-left h2{
   text-align: center;
-  color: #FCFCFC;
+  color: #2a2a2a;
   margin-bottom: 1rem;
 }
 .register-left span{
   font-size: 1rem;
-  color: #fcfcfc;
+  color: #2a2a2a;
   display: inline-block;
   margin-bottom: 0.5rem;
   padding-left: 2rem;
@@ -33,7 +33,7 @@
   border: none;
   border-bottom: #FCFCFC solid 0.125rem;
   background-color: rgba(1, 1, 1, 0.05);
-  color: #FCFCFC;
+  color: #2a2a2a;
 }
 .register-option{
   display: flex;
@@ -49,6 +49,7 @@
 }
 .register-option a{
   flex: 1;
+  color: 	var(--BASE_FONTCOLOR);
   text-align: right;
   line-height: 3rem;
 }
@@ -62,6 +63,10 @@
   flex: 1;
   height: 22rem;
   /* background-color: violet; */
+}
+.register-right-news a{
+  flex: 1;
+  color: 	var(--BASE_FONTCOLOR) !important; 
 }
 .checkerror{
   border: #fc2222 solid 0.125rem !important;
