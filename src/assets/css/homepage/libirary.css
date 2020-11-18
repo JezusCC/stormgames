@@ -10,27 +10,27 @@
 	margin-right: 0.5rem;
 }
 .gategory h2{
-	color: #000000;
+	color: (--FRONTCOLOR);
 	margin-bottom: 1rem;
 }
 .gategory-list{
 	border-radius: 0.375rem;
-	border: 0.125rem solid #0078F2;
+	border: 0.125rem solid #000000;
 	margin-bottom: 1rem;
 }
 .gategory-list h3{
 	color: #FCFCFC;
-	background-color: #0078F2;
+	background-color: var(--FRONTGROUND);
 }
 .gategory-list ul li{
-	color :#848484;
+	color :var(--BASE_FONTCOLOR);
 	margin: 0.5rem 0;
 	padding: 0 0 0 1rem;
 }
 .gategory-list ul li:hover{
 	cursor: pointer;
-	background-color: #FCFCFC;
-	color: #0078F2;
+	background-color: var(--FRONTGROUND);
+	color: var(--FRONTCOLOR);
 }
 .gamecontain{
 	flex: 6;
@@ -55,7 +55,7 @@
 	flex: 2;
 	font-size: 1.5rem;
 	padding: 0.25rem 0.5rem 0rem 0.5rem;
-	background-color: #0078F2;
+	background-color: var(--FRONTGROUND);
 	text-align: center;
 	color: #FCFCFC;
 }
@@ -71,14 +71,13 @@
 }
 .detail-header button{
 	flex: 2;
-	background-color: #000000;
+	background-color: var(--BUTTON_BACKGROUND);
 	border: none;
-	/* border: #0078F2 0.0625rem solid; */
 	margin: 0.125rem 0.125rem;
 }
 .detail-header button:hover{
 	cursor: pointer;
-	background-color: #0078F2;
+	background-color: var(--BUTTON_BACKGROUND_ACTIVE);
 }
 .timeline{
 	width: 95%;
@@ -134,7 +133,7 @@
 	width: 98%;
 	margin: 0rem 1rem 1% 1%;
 	border-radius: 0.25rem;
-	border: #0078F2 solid 0.125rem;
+	border: #000000 solid 0.125rem;
 }
 .libright-card p{
 	color: #2A2A2A;
@@ -142,7 +141,7 @@
 }
 .libright-card h4{
 	color: #FCFCFC;
-	background-color: #0078F2;
+	background-color: var(--FRONTGROUND);
 	padding-left: 1rem;
 }
 .libright-card ul li:hover{

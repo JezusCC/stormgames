@@ -1,7 +1,7 @@
 .shopcartbox{
 	width: 70%;
 	margin: 0 auto;
-	color: #2A2A2A;
+	color: var(--BASE_FONTCOLOR);
 }
 .shopcart-banner{
 	width: 100%;
@@ -10,7 +10,6 @@
 }
 .shopcart-banner-item{
 	background-color: #FCFCFC;
-	/* border: #0078F2 solid 0.0625rem; */
 	display: flex;
 	justify-content: space-between;
 	margin: 0.5rem 0;
