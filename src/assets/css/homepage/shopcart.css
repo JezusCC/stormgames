@@ -13,6 +13,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin: 0.5rem 0;
+	box-shadow: 0 0 0.5rem #A3A3A3;
 }
 .shopcart-banner-item-type{
 	margin: auto 1rem;

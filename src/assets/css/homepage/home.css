@@ -6,6 +6,7 @@
 	width: 50%;
 	height: 4rem;
 	margin: 2rem auto;
+	box-shadow: 0 0 0.5rem #A3A3A3;
 }
 .nav ul{
 	display: flex;
@@ -27,8 +28,7 @@
 	width: 10%;
 	position: fixed;
 	left: 2.5%;
-	/* position: absolute; */
-	/* left: -16%; */
+	box-shadow: 0 0 0.5rem #A3A3A3;
 	background-color: rgba(188,188,188,0.15);
 	border-bottom-left-radius: 0.35rem;
 	border-bottom-right-radius: 0.35rem;

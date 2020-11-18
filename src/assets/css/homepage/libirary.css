@@ -17,6 +17,7 @@
 	border-radius: 0.375rem;
 	border: 0.125rem solid #000000;
 	margin-bottom: 1rem;
+	box-shadow: 0 0 0.5rem #A3A3A3;
 }
 .gategory-list h3{
 	color: #FCFCFC;
@@ -131,9 +132,10 @@
 }
 .libright-card{
 	width: 98%;
-	margin: 0rem 1rem 1% 1%;
+	margin-bottom: 2rem;
 	border-radius: 0.25rem;
 	border: #000000 solid 0.125rem;
+	box-shadow: 0 0 0.5rem #A3A3A3;
 }
 .libright-card p{
 	color: #2A2A2A;
@@ -143,6 +145,8 @@
 	color: #FCFCFC;
 	background-color: var(--FRONTGROUND);
 	padding-left: 1rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
 }
 .libright-card ul li:hover{
 	background-color: #2A2A2A;
