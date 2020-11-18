@@ -16,9 +16,9 @@
 				<h5>{{list.title}}</h5>
 				<ul>
 					<li v-for="item in list.item" @click="jumpToSearch()">{{item}}</li>
-					<li @click="toTop()">回到顶部</li>
 				</ul>
 			</div>
+			<span @click="toTop()">回到顶部</span>
 		</div>
 		<!-- 中部内容列表 -->
 		<div>

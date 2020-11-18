@@ -20,7 +20,7 @@
 					<!-- 操作 -->
 					<div class="shopcart-banner-item-option">
 						<button>收藏</button>
-						<button>移除</button>
+						<button @click="removeItem(index)">移除</button>
 					</div>
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 			return {
 				shopcart:[
 					{imgurl:'aaa',name:'GTA V',price:59,count:1,selected:false,recived:'2812903195@qq.com'},
-					{imgurl:'aaa',name:'CS:GO',price:78,count:1,selected:false,recived:'2812903195@qq.com'},
+					{imgurl:'aaa',name:'CS:GO',price:88,count:1,selected:false,recived:'2812903195@qq.com'},
 					
 				],
 				allSelected:false
@@ -70,7 +70,9 @@
 						result++
 					}
 				}
-				result==this.shopcart.length?(this.allSelected = true):(this.allSelected = false)
+				(result==this.shopcart.length && result!=0)?
+				(this.allSelected = true):
+				(this.allSelected = false)
 				return result
 			},
 			selectedAll(){
@@ -78,6 +80,9 @@
 				for(let i of this.shopcart){
 					i.selected = this.allSelected
 				}
+			},
+			removeItem(idx){
+				this.shopcart.splice(idx,1);
 			}
 		},
 		computed:{
