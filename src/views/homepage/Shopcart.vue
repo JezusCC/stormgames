@@ -53,7 +53,7 @@
 			return {
 				shopcart:[
 					{imgurl:'aaa',name:'GTA V',price:59,count:1,selected:false,recived:'2812903195@qq.com'},
-					{imgurl:'aaa',name:'CS:GO',price:88,count:1,selected:false,recived:'2812903195@qq.com'},
+					{imgurl:'aaa',name:'CS:GO',price:88,count:2,selected:false,recived:'2812903195@qq.com'},
 					
 				],
 				allSelected:false
@@ -90,7 +90,7 @@
 				let price = 0
 				for(let i of this.shopcart){
 					if(i.selected){
-						price += i.price
+						price += i.price * i.count
 					}
 				}
 				return price
