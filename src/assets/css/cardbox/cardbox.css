@@ -50,6 +50,7 @@
 	margin: auto 0.125rem;
 	padding: 0;
 	background-color: rgba(0,0,0,0);
+	box-shadow: 0 0 0.5rem #A3A3A3;
 }
 .cardbox-loading{
 	width: 10%;
