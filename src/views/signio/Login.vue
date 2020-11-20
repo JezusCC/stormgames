@@ -52,12 +52,13 @@ export default {
         }
       ).then(
         (result) => {
-          if(result.data.state){
+					console.log(result)
+          if(result.data){
             console.log(result.data)
             this.$store.commit('loginSuccess',result.data)
             this.$router.push('/')
           }else{
-            console.log(result.data.message)
+            console.log(result.data)
           }
         },
         (err) => console.log(err)
