@@ -66,7 +66,7 @@
 					<table>
 						<tr>
 							<td>
-								<h3>您的商品出现了那些问题？</h3>
+								<h3>您的商品出现了哪些问题？</h3>
 							</td>
 							<td class="close"  @click="resetClickItem()">
 									✖		
@@ -103,7 +103,7 @@
 						</tr>
 						<tr>
 							我想从帐户中移除这款游戏
-							</br><textarea rows="10" cols="40" placeholder="请输入您碰到的问题,客服小姐姐会在2小时内与您联系"></textarea>
+							</br><textarea rows="10" cols="40" placeholder="请输入您碰到的问题,客服会在2小时内与您联系"></textarea>
 						</tr>
 						<tr>
 							<input type="submit" name="submit">
@@ -115,13 +115,16 @@
 					<table>
 						<tr>
 							<td>
-								请输入您的订单号：
-								<input type="text" name="ONumber" required>
-								<span style="color: #FF0000; font-size: 1.5rem;">&nbsp;*</span>
+								<h3>您的充值时出现了哪些问题？</h3>
 							</td>
 							<td class="close"  @click="resetClickItem()">
-								✖
+									✖		
 							</td>
+						</tr>
+						<tr>
+							请输入您的订单号：
+							<input type="text" name="ONumber" required>
+							<span style="color: #FF0000; font-size: 1.5rem;">&nbsp;*</span>
 						</tr>
 						<tr>
 							请选择您当时充值的方式：
@@ -151,7 +154,7 @@
 							<input type="text" size="3">
 						</tr>
 						<tr>
-							其他类型问题<br>
+							其他充值问题<br>
 							<textarea cols="40" rows="10" placeholder="请在此具体描述您的问题"></textarea>
 						</tr>
 						<tr>
@@ -160,10 +163,47 @@
 					</table>
 				</form>
 				<form action="" v-else-if="clickItem == 3">
-					<div class="close" @click="resetClickItem()">
-						<strong>✖</strong>
-					</div>
-					
+					<table>
+						<tr>
+							<td>
+								<h3>您的客户端出现了哪些问题？</h3>
+							</td>
+							<td class="close"  @click="resetClickItem()">
+								✖
+							</td>
+						</tr>
+						<tr>
+							<td>
+								我的客户端无法打开
+								<input type="radio">
+							</td>
+							<td>
+								我的客户端异常闪退
+								<input type="radio">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								库内游戏无法打开
+								<input type="radio">
+							</td>
+							<td>
+								库内游戏进行时闪退
+								<input type="radio">
+							</td>
+						</tr>
+						<tr>
+							游戏无法安装</br>
+							<textarea cols="40" rows="10" placeholder="请在此具体描述您安装时遇见的问题"></textarea>
+						</tr>
+						<tr>
+							其他问题<br>
+							<textarea cols="40" rows="10" placeholder="请在此具体描述您的问题,我们会请技术人员尽快完善"></textarea>
+						</tr>
+						<tr>
+							<input type="submit" name="submit">
+						</tr>
+					</table>
 				</form>
 			</div>
 		</div>
@@ -178,12 +218,14 @@
 				serverOption:[
 					'游戏添加', 
 					'商品问题',
-					'充值问题'
+					'充值问题',
+					'客户端异常'
 				],
 				more:[
 					'游戏未添加到我库中，游戏序列号出错等',
 					'退款，DLC或额外内容缺少等',
-					'充值未到账，我的扣除金额有误等'
+					'充值未到账，我的扣除金额有误等',
+					'客户端无法打开，异常崩溃，游戏闪退等'
 				],
 				clickItem:1000
 			}
@@ -207,7 +249,7 @@
 				this.clickItem = 1000
 			},
 			warningCilckItem(){
-				alert('哎呀，网络繁忙，与客服小姐姐联系中断！')
+				alert('哎呀，网络繁忙，与客服联系中断！')
 			}
 			
 		},
