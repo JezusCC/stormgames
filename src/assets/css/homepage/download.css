@@ -1,0 +1,46 @@
+.downbox{
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.downbox-card{
+	width: 30%;
+	height: 32rem;
+	margin: 1rem auto;
+	border-radius: 0.5rem;
+	background-color: #FCFCFC;
+	box-shadow: 0 0 0.5rem #A3A3A3;
+	display: flex;
+	flex-direction: column;
+}
+.downbox-card h3{
+	flex: 1.5;
+	width: 100%;
+	height: 4rem;
+	max-height: 4rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	background-color: #000000;
+	color: #FCFCFC;
+	text-align: center;
+	line-height: 4rem;
+}
+.downbox-card>ul{
+	flex: 8.5;
+	display: flex;
+	flex-direction: column;
+}
+.downbox-card>ul>li{
+	height: 3rem;
+	margin: 0.5rem 0.25rem;
+	background-color: #dddddd;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 0.5rem #A3A3A3;
+	padding-left: 1rem;
+	line-height: 3rem;
+}
+.downbox-card>ul>li:hover{
+	background-color: #000000;
+	color: #FCFCFC;
+}
