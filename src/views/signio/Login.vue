@@ -52,13 +52,12 @@ export default {
         }
       ).then(
         (result) => {
-					console.log(result)
-          if(result.data){
+          if(result.data.code == 0){
             console.log(result.data)
-            this.$store.commit('loginSuccess',result.data)
+            this.$store.commit('loginSuccess',result.data.data)
             this.$router.push('/')
           }else{
-            console.log(result.data)
+            console.log(result.data.message)
           }
         },
         (err) => console.log(err)
