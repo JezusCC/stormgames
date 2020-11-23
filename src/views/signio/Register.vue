@@ -10,6 +10,7 @@
           placeholder="登录用户名"
           name="username"
           v-model="name"
+          :class="{'checkerror': checkName()}"
         />
         <span>电子邮箱地址</span>
         <input
@@ -17,7 +18,7 @@
           placeholder="邮箱"
           name="useremail"
           v-model="email"
-          :class="{'checkerror': checkRegular()}"
+          :class="{'checkerror': checkEmail()}"
         />
         <span>账户密码</span>
         <input
@@ -25,6 +26,7 @@
           placeholder="账户密码"
           name="upwd"
           v-model="password"
+          :class="{'checkerror': checkpassword()}"
         />
         <span>确认您的账户密码</span>
         <input
@@ -32,6 +34,7 @@
           placeholder="确认您的密码"
           name="upwd"
           v-model="samepassword"
+          :class="{'checkerror': checkSamepassword()}"
         />
         <div class="register-option">
           <button @click="registerBtn()">注册</button>
@@ -59,7 +62,15 @@ export default {
     registerBtn() {
       console.log('registerBtn');
     },
-    checkRegular() {
+    checkName(){
+      let regName = /^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/;
+      if(this.name == '' || !regName.test(this.name)){
+        return true
+      }else{
+        return false
+      }
+    },
+    checkEmail() {
       //验证邮箱正则
       let regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
       if(this.email =='' || !regEmail.test(this.email)) {
@@ -69,6 +80,20 @@ export default {
         return true
       }else{
         // console.log('ok')
+        return false
+      }
+    },
+    checkpassword(){
+      if(this.password.length < 6){
+        return true
+      }else{
+        return false
+      }
+    },
+    checkSamepassword(){
+      if((this.samepassword != this.password) || this.samepassword == ''){
+        return true
+      }else{
         return false
       }
     },

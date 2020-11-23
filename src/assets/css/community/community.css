@@ -1,4 +1,95 @@
+li{
+  color: #0000ff;
+}
 .communityPage{
   width: 70%;
   margin: 0 auto;
+  margin-left: 24%;
+}
+.searchbox{
+  width: 70%;
+  height: 20rem;
+  display: flex;
+  margin-top: 1rem;
+  /* background-color: var(--FRONTCOLOR); */
+}
+.searchBoxLeft{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  background-color: var(--FRONTCOLOR);
+}
+.SBL-game{
+  padding-left:0.5rem;
+  flex: 1;
+  border-right: #2a2a2a;
+  border-right-style: inset;
+  border-right-width: 0.1rem;
+}
+.SBL-game-content{
+  width: 100%;
+  height: 17rem;
+  padding-top: 0.5rem;
+}
+.SBL-center{
+  padding-left: 0.5rem;
+  flex: 1;
+}
+.SBL-center-content{
+  width: 100%;
+  height: 17rem;
+  padding-top: 0.5rem;
+}
+.searchBoxRight{
+  width: 5%;
+  flex: 1;
+  display: flex;
+  background-color: var(--FRONTCOLOR);
+  margin-left: 0.5rem;
+}
+.searchBtnbox{
+  display: flex;
+  flex-direction: column;
+}
+.searchBtnboxTop{
+  /* display: flex; */
+  flex-direction: column;
+  /* flex: 1; */
+  width: 15rem;
+  text-align: left;
+  margin-top: 4rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+.searchBtnboxInput{
+  display: flex;
+}
+.searchBtnboxInput input{
+  flex: 8;
+  height: 1.5rem;
+}
+.searchBtnboxInput button{
+  flex: 2;
+  border-radius: 0.25rem;
+  border: none;
+  color: var(--BUTTON_BACKGOUND_ACTIVE);
+}
+.searchBtnboxInput button:hover {
+  cursor: pointer;
+}
+
+.searchBtnboxUnder{
+  /* display: flex; */
+  flex-direction: column;
+  /* flex: 1; */
+  margin-top: 4rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  text-align: left;
+}
+.search-content{
+  width: 70%;
+  height: 40rem;
+  display: flex;
+  margin-top: 1rem;
 }

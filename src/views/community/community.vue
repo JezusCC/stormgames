@@ -18,7 +18,8 @@
           </div>
           <div class="SBL-game-content">
             <ul> 
-            <li></li>
+            <li><a href="#">CSGO</a></li>
+            <li><a href="#">Terraria</a></li>
             </ul>
           </div>
         </div>
@@ -29,7 +30,8 @@
           </div>
           <div class="SBL-center-content">
             <ul>
-              <li></li>
+            <li><a href="#">CSGO</a></li>
+            <li><a href="#">Terraria</a></li>
             </ul>
           </div>
         </div>
@@ -54,6 +56,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="search-content">
+      <div></div>
     </div>
   </div>
 </template>
