@@ -71,7 +71,7 @@
 							</div>
 							<!-- 操作 -->
 							<div class="contentBox-body-item-opt">
-								<button>立即购买</button>
+								<button @click="jumpToDetail(index)">立即购买</button>
 								<button>加入购物车</button>
 							</div>
 						</div>

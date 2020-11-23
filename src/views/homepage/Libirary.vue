@@ -39,7 +39,9 @@
 						<p>{{item.content}}</p>
 					</div>
 				</div>
-				<div v-show="currentGameNews.length<=0" class="timeline-nonews"><p>暂无更多消息</p></div>
+				<div v-show="currentGameNews.length<=0" class="timeline-nonews">
+					<p>暂无更多消息</p>
+				</div>
 			</div>
 		</div>
 		<!-- 右侧添加内容 -->
@@ -71,7 +73,7 @@
 								<span>{{fir.name}}</span>
 								<span>当前:
 									<strong :style="getFriendsOnlineStyle(fir.state)">
-									{{fir.state}}
+										{{fir.state}}
 									</strong>
 								</span>
 							</div>
@@ -86,88 +88,113 @@
 
 <script>
 	export default {
-		created(){
+		created() {
 			this.getUserLibirarys()
 		},
-		data(){
+		data() {
 			return {
 				//{id,name,catename,imgurl}
 				//默认值为：未分类和空列表
-				gamesList:[{title:'未分类',games:[]}],
+				gamesList: [{
+					title: '未分类',
+					games: []
+				}],
 				//{number,date}
-				currentGamesDetail:{},
+				currentGamesDetail: {},
 				//[{imgurl,name,state}]
-				currentGamesTogethers:[],
+				currentGamesTogethers: [],
 				//[{imgurl,name,date}]
-				currentGameAchievements:[],
+				currentGameAchievements: [],
 				//[{date,title,content}]
-				currentGameNews:[],
-				currentIndex:0,
+				currentGameNews: [],
+				currentIndex: 0,
 			}
 		},
-		methods:{
-			getUserLibirarys(){
-				this.$axios.get(this.$baseip+'/userlibirary',{params:{uid:this.$store.state.user.uid}})
-				.then((result)=>{
-					this.gamesList = result.data
-				})
-				.catch(err=>console.log(err))
+		methods: {
+			getUserLibirarys() {
+				this.$axios.get(this.$baseip + '/userlibirary', {
+						params: {
+							uid: this.$store.state.user.uid
+						}
+					})
+					.then((result) => {
+						this.gamesList = result.data
+					})
+					.catch(err => console.log(err))
 			},
-			getCurrentGamesInfo(pid){
-				this.$axios.get(this.$baseip+'/gameinfo?pid='+pid+'&uid='+this.$store.state.user.uid)
-				.then((result)=>{
+			getCurrentGamesInfo(pid) {
+				this.$axios.get(this.$baseip + '/gameinfo', {
+					params: {
+						pid: pid,
+						uid: this.$store.state.user.uid
+					}
+				}).then((result) => {
 					this.currentGamesDetail = result.data.gameinfo.detail
 					this.currentGameAchievements = result.data.gameinfo.achivements
 					this.currentGamesTogethers = result.data.gameinfo.togethers
 					this.currentGameNews = result.data.gameinfo.news
-				},(err)=>{
+				}, (err) => {
 					console.log(err)
 				})
-				// this.currentGameNews = [
-				// 	{date:'2000-03-03',title:'更新',content:'我们有更新了'}
-				// ]
+				this.currentGamesDetail = {imgurl:this.$baseip+'/public/product/'+1+'/background.jpg'}
+				this.currentGameNews = [
+					{date:'2020-03-03',title:'V1.0.8更新',
+					content:'此次更新了全新的载具和枪械，现在可以在洛圣都更加酣畅淋漓的战斗了'},
+					{date:'2019-11-01',title:'V1.0.7更新',
+					content:'万圣节更新，现在提供了万圣节装扮，穿上万圣节装扮和你的朋友一起在洛圣都作怪吧'},
+					{date:'2019-08-15',title:'V1.0.5更新',
+					content:'此次更新了全新的载具和枪械，调整了以往摩托载具速度'},
+					{date:'2019-03-03',title:'V1.0.0更新',
+					content:'此次正式版发布，我们将所有游戏内容解锁，相信不会让玩家失望的，现在尽情的在洛圣都里破坏吧'}
+				]
 			},
-			getProcessCategory(){
+			getProcessCategory() {
 				let ret = []
 				//{title,games[name,idx]}
 				let j = 0
-				for(let i = 0;i<this.gamesList.length;i++){
+				for (let i = 0; i < this.gamesList.length; i++) {
 					//检查当前遍历的游戏分类是否在分类列表中出现过
-					for(;j<ret.length;j++){
-						if(ret[j].title == this.gamesList[i].categoryname){
+					for (; j < ret.length; j++) {
+						if (ret[j].title == this.gamesList[i].categoryname) {
 							ret[j].games.push({
-								name:this.gamesList[i].name,
-								index:i})
+								name: this.gamesList[i].name,
+								index: i
+							})
 							break
 						}
-					}	
+					}
 					//如果遍历到末尾了，说明并没有找到匹配的分类，则新建一个分类
-					if(j >= ret.length){
-						ret.push({title:this.gamesList[i].categoryname,games:[{name:this.gamesList[i].name,index:i}]})
+					if (j >= ret.length) {
+						ret.push({
+							title: this.gamesList[i].categoryname,
+							games: [{
+								pid: this.gamesList[i].pid,
+								name: this.gamesList[i].name,
+								index: i
+							}],
+						})
 						j = 0
 					}
 				}
 				return ret
 			},
-			chooseGameDetail(idx){
+			chooseGameDetail(idx) {
 				this.currentIndex = idx
 				this.getCurrentGamesInfo(this.gamesList[this.currentIndex].id)
-				window.scrollTo(0,0)
+				window.scrollTo(0, 0)
 			},
-			getFriendsOnlineStyle(state){
-				if(state == '在线'){
+			getFriendsOnlineStyle(state) {
+				if (state == '在线') {
 					return 'color:#0078F2'
-				}
-				else if(state == '离线'){
+				} else if (state == '离线') {
 					return 'color:#BFBFBF'
-				}
-				else{
+				} else {
 					return 'color:#44FF44'
 				}
 			}
 		},
-		components:{
-			
+		components: {
+
 		}
 	}
 </script>
