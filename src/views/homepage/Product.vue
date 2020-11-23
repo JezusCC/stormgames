@@ -65,7 +65,7 @@
 							</div>
 							<!-- 文字描述 -->
 							<div class="contentBox-body-item-sp">
-								<strong>GTA V</strong>
+								<strong @click="jumpToDetail()">GTA V</strong>
 								<span>价格:59.0</span>
 								<span>Rockstar 开放世界代表作</span>
 							</div>
@@ -135,6 +135,15 @@
 			},
 			removeTags(index){
 				this.screenTags.splice(index,1)
+			},
+			jumpToDetail(){
+				//选择物品后，将物品id传递过去
+				this.$router.push({
+					path:'/pro_detail',
+					query:{
+						pid:1
+					}
+				})
 			}
 		}
 	}

@@ -19,11 +19,14 @@
 				</div>
 				<!-- 游戏时长相关 -->
 				<div class="probasic-info-line">
-					<span>总游戏时长:{{getUserInfo.allplay}}时</span>
+					<span>总游戏时长:{{getUserInfo.gametime}}时</span>
+				</div>
+				<div class="probasic-info-line">
+					<span>用户等级:{{getUserInfo.level}}级</span>
 				</div>
 				<div class="probasic-info-line">
 					<span>态度:</span>
-					<textarea v-model="getUserInfo.sayinfo" 
+					<textarea v-model="getUserInfo.attitude" 
 					:disabled="!isModifySayInfo"
 					:style="{'background-color':(isModifySayInfo?'rgba(255,255,255,0.75)':'rgba(0,0,0,0)')}"
 					@keydown.enter="submitSayInfo()">
@@ -49,32 +52,32 @@
 				<form action="" v-if="(detailShowFlag == 0)||(detailShowFlag == 1) ">
 					<div>
 						<span>昵称:</span>
-						<input type="text" v-model="getUserDetail.username" 
+						<input type="text" v-model="userDetail.nickname" 
 						:disabled="detailShowFlag==0">
 					</div>
 					<div>
 						<span>生日:</span>
-						<input type="text" v-model="getUserDetail.birthday" 
+						<input type="text" v-model="userDetail.birthday" 
 						:disabled="detailShowFlag==0">
 					</div>
 					<div>
 						<span>性别:</span>
-						<input type="text" v-model="getUserDetail.sex" 
+						<input type="text" v-model="userDetail.sex" 
 						:disabled="detailShowFlag==0">
 					</div>
 					<div>
 						<span>地区:</span>
-						<input type="text" v-model="getUserDetail.area" 
+						<input type="text" v-model="userDetail.place" 
 						:disabled="detailShowFlag==0">
 					</div>
 					<div>
 						<span>手机:</span>
-						<input type="text" v-model="getUserDetail.phone" 
+						<input type="text" v-model="userDetail.phone" 
 						:disabled="detailShowFlag==0">
 					</div>
 					<div>
 						<span>实名认证:</span>
-						<input type="text" :value="getUserDetail.identity?'已实名':'未实名'" 
+						<input type="text" :value="userDetail.identity?'已实名':'未实名'" 
 						disabled>
 					</div>
 					<div>
@@ -131,8 +134,12 @@
 		data(){
 			return {
 				isModifySayInfo:false,
-				detailShowFlag:0
+				detailShowFlag:0,
+				userDetail:{}
 			}
+		},
+		created() {
+			this.getUserDetail()
 		},
 		methods:{
 			modifyUserProfile(){
@@ -144,7 +151,7 @@
 				this.detailShowFlag = 2
 			},
 			modifySaiInfo(){
-				this.isModifySayInfo = true
+				this.isModifySayInfo = !this.isModifySayInfo
 			},
 			submitSayInfo(){
 				//向服务器提交最新的签名
@@ -166,6 +173,12 @@
 					alert('您的隐私信息已更新')
 				}
 				this.detailShowFlag = 0
+			},
+			getUserDetail(){
+				this.$axios.get(this.$baseip+'/userinfo?uid='+this.$store.state.user.uid)
+				.then((result)=>{
+					this.userDetail = result.data
+				})
 			}
 		},
 		computed:{
@@ -178,16 +191,6 @@
 			},
 			getUserInfo(){
 				return this.$store.state.user
-			},
-			getUserDetail(){
-				return {
-					username:'八级大狂风',
-					birthday:'1998年6月6日',
-					sex:'男',
-					area:'中国-江西-南昌',
-					phone:'170****3351',
-					identity:true
-				}
 			},
 			getPlayInfo(){
 				return []
