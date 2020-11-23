@@ -51,6 +51,10 @@ const routes = [
 	{
 		path:'/shopserver',
 		component:()=>import('../views/shopserver/Shopsever.vue')
+	},
+	{
+		path:'/pro_detail',
+		component:()=>import('../views/homepage/Product_Detail.vue')
 	}
 ]
 
