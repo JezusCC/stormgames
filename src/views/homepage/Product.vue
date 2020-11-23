@@ -55,19 +55,19 @@
 			</div>
 			<div class="contentBox-body">
 				<ul>
-					<li>
+					<li v-for="(item,index) in products">
 						<div class="contentBox-body-item">
 							<!-- 图片 -->
 							<div class="contentBox-body-item-img">
 								<img src="aaaaa" alt="">
 								<!-- 折扣时显示 -->
-								<span>-75%</span>
+								<span>-{{percents(index)}}%</span>
 							</div>
 							<!-- 文字描述 -->
 							<div class="contentBox-body-item-sp">
-								<strong @click="jumpToDetail()">GTA V</strong>
-								<span>价格:59.0</span>
-								<span>Rockstar 开放世界代表作</span>
+								<strong @click="jumpToDetail(index)">{{item.name}}</strong>
+								<span>价格:{{item.deprice}}</span>
+								<span>{{item.description}}</span>
 							</div>
 							<!-- 操作 -->
 							<div class="contentBox-body-item-opt">
@@ -119,8 +119,11 @@
 				//价格区间
 				minPrice:'',
 				maxPrice:'',
-				
+				products:[]
 			}
+		},
+		created() {
+			this.getProducts()
 		},
 		methods:{
 			foldCategory(index){
@@ -136,14 +139,23 @@
 			removeTags(index){
 				this.screenTags.splice(index,1)
 			},
-			jumpToDetail(){
+			jumpToDetail(index){
 				//选择物品后，将物品id传递过去
 				this.$router.push({
 					path:'/pro_detail',
 					query:{
-						pid:1
+						pid:this.products[index].pid
 					}
 				})
+			},
+			getProducts(){
+				this.$axios.get(this.$baseip+'/product').then((result)=>{
+					this.products = result.data
+				})
+			},
+			percents(index){
+				let rp = this.products[index].deprice / this.products[index].price
+				return (1-rp).toFixed(2) * 100
 			}
 		}
 	}

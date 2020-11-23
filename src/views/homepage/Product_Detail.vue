@@ -10,7 +10,7 @@
 				<!-- 小图列表 -->
 				<div class="pdpart1-smimg">
 					<ul>
-						<li v-for="(item,index) in [0,1,2,3,4]"><img src="" alt=""></li>
+						<li v-for="(item,index) in [0,0,0,0,0]"><img src="" alt=""></li>
 					</ul>
 				</div>
 			</div>
@@ -18,19 +18,14 @@
 			<div class="pdpart2">
 				<!-- 介绍部分 -->
 				<div class="pdpart2-desc">
-					<h2>{{'GTA V'}}</h2>
-					<p>本作为《侠盗猎车手》系列最新作，
-					由Rockstar North制作，Rockstar Games发行。
-					游戏采用新版雷霆引擎(RAGE引擎)，
-					游戏故事发生以美国洛杉矶及其周边地区为原型的城市Los Santos，
-					是现实地区中的洛杉矶和南加州。制作单位拍摄了超过25万张相关照片，
-					并且研究了人口调查和汽车销售数据，以建立游戏中的世界。</p>
+					<h2>{{productData.name}}</h2>
+					<p>{{productData.description}}</p>
 				</div>
 				<div class="pdpart2-opt">
 					<!-- 价格 -->
 					<div class="pdpart2-opt-price">
-						<span>原价:{{119}}</span>
-						<span>现价:{{59}}</span>
+						<span>原价:{{productData.price}}</span>
+						<span>现价:{{productData.deprice}}</span>
 					</div>
 					<button>加入购物车</button>
 					<button>购买</button>
@@ -46,7 +41,7 @@
 			<div class="pdpart3-rating">
 				<span>评分:{{rating}}</span>
 				<ul>
-					<li v-for="(item,index) in [0,1,2,3,4]"
+					<li v-for="(item,index) in [0,0,0,0,0]"
 						@mouseover="coverRating(index)"
 						@mouseout="recoverRating()"
 						@click="setRating(index)">
@@ -89,10 +84,12 @@
 			return {
 				rating:5,
 				temprating:0,
+				productData:{},
 				comments:[]
 			}
 		},
 		created() {
+			this.getProductDetail(this.$route.query.pid)
 			this.getComments()
 		},
 		methods:{
@@ -123,6 +120,13 @@
 						content:'你这个游戏害人不浅哪，我儿子才十二岁啊，天天看你们这个。'
 					}
 				]
+			},
+			getProductDetail(pid){
+				this.$axios.get(this.$baseip+'/product_detail',{params:{pid}})
+				.then((result)=>{
+					this.productData = result.data
+				})
+				.catch(err=>console.log(err))
 			},
 			dianzan(index){
 				if(!this.comments[index].opt){

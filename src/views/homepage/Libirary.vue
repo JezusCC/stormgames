@@ -107,9 +107,11 @@
 		},
 		methods:{
 			getUserLibirarys(){
-				this.$axios.get(this.$baseip+'/userlibirary').then((result)=>{
-					this.gamesList = result.data.items
+				this.$axios.get(this.$baseip+'/userlibirary',{params:{uid:this.$store.state.user.uid}})
+				.then((result)=>{
+					this.gamesList = result.data
 				})
+				.catch(err=>console.log(err))
 			},
 			getCurrentGamesInfo(pid){
 				this.$axios.get(this.$baseip+'/gameinfo?pid='+pid+'&uid='+this.$store.state.user.uid)
@@ -132,7 +134,7 @@
 				for(let i = 0;i<this.gamesList.length;i++){
 					//检查当前遍历的游戏分类是否在分类列表中出现过
 					for(;j<ret.length;j++){
-						if(ret[j].title == this.gamesList[i].catename){
+						if(ret[j].title == this.gamesList[i].categoryname){
 							ret[j].games.push({
 								name:this.gamesList[i].name,
 								index:i})
@@ -141,7 +143,7 @@
 					}	
 					//如果遍历到末尾了，说明并没有找到匹配的分类，则新建一个分类
 					if(j >= ret.length){
-						ret.push({title:this.gamesList[i].catename,games:[{name:this.gamesList[i].name,index:i}]})
+						ret.push({title:this.gamesList[i].categoryname,games:[{name:this.gamesList[i].name,index:i}]})
 						j = 0
 					}
 				}

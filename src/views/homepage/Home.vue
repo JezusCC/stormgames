@@ -70,28 +70,28 @@
 					//请求
 					console.log(this.$baseip+'/product_hot')
 					this.$axios.get(this.$baseip+'/product-hot').then((items)=>{
-						this.hotProduct = items.data.hotproduct
+						this.hotProduct = items.data
 					},(err)=>{
 						console.log(err)
 					})
 				}else if(type === 'new'){
 					//请求
 					this.$axios.get(this.$baseip+'/product-new').then((items)=>{
-						this.newProduct = items.data.newproduct
+						this.newProduct = items.data
 					},(err)=>{
 						console.log(err)
 					})
 				}else if(type === 'count'){
 					//请求
 					this.$axios.get(this.$baseip+'/product-count').then((items)=>{
-						this.countProduct = items.data.countproduct
+						this.countProduct = items.data
 					},(err)=>{
 						console.log(err)
 					})
 				}else if(type === 'free'){
 					//请求
 					this.$axios.get(this.$baseip+'/product-free').then((items)=>{
-						this.freeProduct = items.data.freeproduct
+						this.freeProduct = items.data
 					},(err)=>{
 						console.log(err)
 					})

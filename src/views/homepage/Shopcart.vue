@@ -13,7 +13,7 @@
 						<div>
 							<span>商品: {{item.name}}</span>
 							<span>单价: {{item.price}}</span>
-							<span> × {{item.count}}</span>
+							<span> × {{item.num}}</span>
 							<span>收件人: {{item.recived}}</span>
 						</div>
 					</div>
@@ -51,17 +51,30 @@
 	export default {
 		data(){
 			return {
-				shopcart:[
-					{imgurl:'aaa',name:'GTA V',price:59,count:1,selected:false,recived:'2812903195@qq.com'},
-					{imgurl:'aaa',name:'CS:GO',price:88,count:2,selected:false,recived:'2812903195@qq.com'},
-					
-				],
+				shopcart:[],
 				allSelected:false
 			}
 		},
+		created() {
+			this.getShopcart()
+		},
 		methods:{
 			getShopcart(){
-				
+				let res = []
+				this.$axios.get(this.$baseip+'/shopcart',{params:{uid:this.$store.state.user.uid}})
+				.then((result)=>{
+					for(let i of result.data){
+						res.push({
+							imgurl:'aaa',
+							name:i.name,
+							price:i.deprice,
+							num:i.num,
+							recived:i.recuser,
+							selected:false
+						})
+					}
+					this.shopcart = res
+				})
 			},
 			checkWattingPay(){
 				let result = 0
@@ -90,7 +103,7 @@
 				let price = 0
 				for(let i of this.shopcart){
 					if(i.selected){
-						price += i.price * i.count
+						price += i.price * i.num
 					}
 				}
 				return price
