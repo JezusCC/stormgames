@@ -117,6 +117,10 @@
 	min-width: 4.5rem;
 	padding-left: 1rem;
 }
+.contentBox-body-item-sp strong:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
 .contentBox-head>ul{
 	flex: 9;
 	width: 100%;
