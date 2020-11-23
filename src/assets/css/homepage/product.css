@@ -197,6 +197,12 @@
 	flex-direction: column;
 	margin-left: 0.5rem;
 }
+.contentBox-body-item-sp span{
+	max-width: 30rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .contentBox-body-item-opt{
 	flex: 1;
 	display: flex;
