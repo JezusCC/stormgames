@@ -25,7 +25,8 @@
 }
 .gategory-list ul li{
 	color :var(--BASE_FONTCOLOR);
-	margin: 0.5rem 0;
+	height: 1.5rem;
+	margin: 0.25rem 0;
 	padding: 0 0 0 1rem;
 }
 .gategory-list ul li:hover{
@@ -45,6 +46,7 @@
 }
 .detail-banner img{
 	max-width: 100%;
+	width: 100%;
 	height: 100%;
 }
 .detail-header{
