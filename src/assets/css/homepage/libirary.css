@@ -110,7 +110,7 @@
 	transform: translateX(-0.75rem) translateY(1rem);
 }
 .timeline-item-line{
-	width: 6rem;
+	width: 12rem;
 	margin-left: 0.5rem;
 	padding-left: 1rem;
 	border-bottom-left-radius: 50%;
@@ -123,7 +123,7 @@
 .timeline-item-body{
 	max-width: 70%;
 	color: #2A2A2A;
-	transform: translateX(6.75rem) translateY(-1.25rem);
+	transform: translateX(12.75rem) translateY(-1.25rem);
 	border: #0078F2 solid 0.125rem;
 	border-radius: 0.5rem;
 	padding: 0 0.5rem;
