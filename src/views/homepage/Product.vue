@@ -59,7 +59,7 @@
 						<div class="contentBox-body-item">
 							<!-- 图片 -->
 							<div class="contentBox-body-item-img">
-								<img src="aaaaa" alt="">
+								<img src="../../assets/img/sample.png" alt="">
 								<!-- 折扣时显示 -->
 								<span>-{{percents(index)}}%</span>
 							</div>

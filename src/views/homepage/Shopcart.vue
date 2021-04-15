@@ -65,7 +65,7 @@
 				.then((result)=>{
 					for(let i of result.data){
 						res.push({
-							imgurl:'aaa',
+							imgurl:this.$baseip+'/public/product/'+1+'/background.jpg',
 							name:i.name,
 							price:i.deprice,
 							num:i.num,

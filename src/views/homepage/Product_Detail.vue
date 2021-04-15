@@ -5,12 +5,12 @@
 			<div class="pdpart1">
 				<!-- 大图 -->
 				<div class="pdpart1-bigimg">
-					<img src="" alt="">
+					<img src="../../assets/img/sample.png" alt="">
 				</div>
 				<!-- 小图列表 -->
 				<div class="pdpart1-smimg">
 					<ul>
-						<li v-for="(item,index) in [0,0,0,0,0]"><img src="" alt=""></li>
+						<li v-for="(item,index) in [0,0,0,0,0]"><img src="../../assets/img/sample.png" alt=""></li>
 					</ul>
 				</div>
 			</div>

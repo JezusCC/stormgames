@@ -7,7 +7,7 @@
 			<div v-for="item in getProcessCategory()" class="gategory-list">
 				<h3>{{item.title}}</h3>
 				<ul>
-					<li v-for="game in item.games" @click="chooseGameDetail(game.index)">{{game.name}}</li>
+					<li v-for="game in item.games" @click="chooseGameDetail(game.index,game.pid)">{{game.name}}</li>
 				</ul>
 			</div>
 		</div>
@@ -123,30 +123,10 @@
 					.catch(err => console.log(err))
 			},
 			getCurrentGamesInfo(pid) {
-				this.$axios.get(this.$baseip + '/gameinfo', {
-					params: {
-						pid: pid,
-						uid: this.$store.state.user.uid
-					}
-				}).then((result) => {
-					this.currentGamesDetail = result.data.gameinfo.detail
-					this.currentGameAchievements = result.data.gameinfo.achivements
-					this.currentGamesTogethers = result.data.gameinfo.togethers
-					this.currentGameNews = result.data.gameinfo.news
-				}, (err) => {
-					console.log(err)
-				})
 				this.currentGamesDetail = {imgurl:this.$baseip+'/public/product/'+1+'/background.jpg'}
-				this.currentGameNews = [
-					{date:'2020-03-03',title:'V1.0.8更新',
-					content:'此次更新了全新的载具和枪械，现在可以在洛圣都更加酣畅淋漓的战斗了'},
-					{date:'2019-11-01',title:'V1.0.7更新',
-					content:'万圣节更新，现在提供了万圣节装扮，穿上万圣节装扮和你的朋友一起在洛圣都作怪吧'},
-					{date:'2019-08-15',title:'V1.0.5更新',
-					content:'此次更新了全新的载具和枪械，调整了以往摩托载具速度'},
-					{date:'2019-03-03',title:'V1.0.0更新',
-					content:'此次正式版发布，我们将所有游戏内容解锁，相信不会让玩家失望的，现在尽情的在洛圣都里破坏吧'}
-				]
+				this.$axios.get(this.$baseip+'/product_news',{params:{pid:1}}).then((result)=>{
+					this.currentGameNews = result.data
+				})
 			},
 			getProcessCategory() {
 				let ret = []
@@ -178,9 +158,9 @@
 				}
 				return ret
 			},
-			chooseGameDetail(idx) {
-				this.currentIndex = idx
-				this.getCurrentGamesInfo(this.gamesList[this.currentIndex].id)
+			chooseGameDetail(index,pid) {
+				this.currentIndex = index
+				this.getCurrentGamesInfo(pid)
 				window.scrollTo(0, 0)
 			},
 			getFriendsOnlineStyle(state) {
